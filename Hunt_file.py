@@ -10,8 +10,8 @@ def on_start(container):
     # call 'ip_reputation_1' block
     ip_reputation_1(container=container)
 
-    # call 'Virus_Total_reputation_check' block
-    Virus_Total_reputation_check(container=container)
+    # call 'ip_reputation_2' block
+    ip_reputation_2(container=container)
 
     return
 
@@ -36,24 +36,19 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
 
     return
 
-def Virus_Total_reputation_check(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('Virus_Total_reputation_check() called')
+def ip_reputation_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('ip_reputation_2() called')
 
-    # collect data for 'Virus_Total_reputation_check' call
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.fileHash', 'artifact:*.id'])
+    # collect data for 'ip_reputation_2' call
 
     parameters = []
     
-    # build parameters list for 'Virus_Total_reputation_check' call
-    for container_item in container_data:
-        if container_item[0]:
-            parameters.append({
-                'hash': container_item[0],
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': container_item[1]},
-            })
+    # build parameters list for 'ip_reputation_2' call
+    parameters.append({
+        'ip': "",
+    })
 
-    phantom.act(action="file reputation", parameters=parameters, assets=['virus total'], callback=add_artifact_2, name="Virus_Total_reputation_check")
+    phantom.act(action="ip reputation", parameters=parameters, assets=['virustotal'], callback=update_artifact_1, name="ip_reputation_2")
 
     return
 
@@ -90,36 +85,34 @@ def add_artifact_1(action=None, success=None, container=None, results=None, hand
 
     return
 
-def add_artifact_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('add_artifact_2() called')
+def update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_artifact_1() called')
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    # collect data for 'add_artifact_2' call
-    results_data_1 = phantom.collect2(container=container, datapath=['Virus_Total_reputation_check:action_result.summary.positives', 'Virus_Total_reputation_check:action_result.parameter.context.artifact_id'], action_results=results)
-    inputs_data_1 = phantom.collect2(container=container, datapath=['Virus_Total_reputation_check:artifact:*.source_data_identifier', 'Virus_Total_reputation_check:artifact:*.id'], action_results=results)
+    # collect data for 'update_artifact_1' call
+    results_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_2:action_result.status', 'ip_reputation_2:action_result.data.*.continent', 'ip_reputation_2:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
     
-    # build parameters list for 'add_artifact_2' call
+    # build parameters list for 'update_artifact_1' call
     for results_item_1 in results_data_1:
-        for inputs_item_1 in inputs_data_1:
-            if inputs_item_1[0]:
-                parameters.append({
-                    'name': "User created artifact",
-                    'label': "event",
-                    'cef_name': "file_reputation_from_Virustotal",
-                    'contains': "",
-                    'cef_value': results_item_1[0],
-                    'container_id': "",
-                    'cef_dictionary': "",
-                    'run_automation': "true",
-                    'source_data_identifier': inputs_item_1[0],
-                    # context (artifact id) is added to associate results with the artifact
-                    'context': {'artifact_id': results_item_1[1]},
-                })
+        if results_item_1[0]:
+            parameters.append({
+                'artifact_id': results_item_1[0],
+                'name': results_item_1[1],
+                'label': "",
+                'severity': "",
+                'cef_json': "",
+                'cef_types_json': "",
+                'tags': "",
+                'overwrite': "",
+                'artifact_json': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': results_item_1[2]},
+            })
 
-    phantom.act(action="add artifact", parameters=parameters, assets=['phantom app'], name="add_artifact_2", parent_action=action)
+    phantom.act(action="update artifact", parameters=parameters, assets=['phantom_playbook'], name="update_artifact_1", parent_action=action)
 
     return
 

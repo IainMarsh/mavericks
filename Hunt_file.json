@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "2b740c8229c1133ab2c1643dfbc9f3ec8db0bb80",
+            "hash": "8e12bd5bedd193f0156956c06241d673b5268228",
             "joint": {
                 "cells": [
                     {
@@ -55,7 +55,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'ip_reputation_1' block\n    ip_reputation_1(container=container)\n\n    # call 'Virus_Total_reputation_check' block\n    Virus_Total_reputation_check(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'ip_reputation_1' block\n    ip_reputation_1(container=container)\n\n    # call 'ip_reputation_2' block\n    ip_reputation_2(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -295,8 +295,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 139,
-                        "line_start": 126,
+                        "line_end": 132,
+                        "line_start": 119,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -409,1685 +409,6 @@
                         },
                         "type": "link",
                         "z": 75
-                    },
-                    {
-                        "action": "file reputation",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "hash": "artifact:*.cef.fileHash"
-                        },
-                        "angle": 0,
-                        "app": "VirusTotal",
-                        "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "file reputation",
-                                "actions": [
-                                    "detonate url",
-                                    "detonate file",
-                                    "get report",
-                                    "get file",
-                                    "ip reputation",
-                                    "domain reputation",
-                                    "url reputation",
-                                    "file reputation",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "VirusTotal",
-                                "app_version": "2.0.28",
-                                "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
-                                "asset_name": "virus total",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "hash": "artifact:*.cef.fileHash"
-                                },
-                                "has_app": true,
-                                "id": 23,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "virus total",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "hash",
-                                            "sha256",
-                                            "sha1",
-                                            "md5"
-                                        ],
-                                        "data_path": "action_result.parameter.hash",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "6c1948f7edf115cd1f13cd170b882077930be150"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "hash",
-                                            "md5"
-                                        ],
-                                        "data_path": "action_result.data.*.md5",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "494303294715f5ffad7ad3f43b73b00b"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.data.*.permalink",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "https://www.test.com/file/27ce020f7cdb4b775b80bd6e3ef1d16079401e0d45cfd28ffbd8c63ff2ddf7d7/analysis/1548112684/"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            64
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha1"
-                                        ],
-                                        "data_path": "action_result.data.*.resource",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "6c1948f7edf115cd1f13cd170b882077930be150"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.response_code",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.scan_date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-01-21 23:18:04"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "virustotal scan id"
-                                        ],
-                                        "data_path": "action_result.data.*.scan_id",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "27ce020f7cdb4b775b80bd6e3ef1d16079401e0d45cfd28ffbd8c63ff2ddf7d7-1548112684"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.scans.*.detected",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.scans.*.result",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.scans.*.update",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.scans.*.version",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "hash",
-                                            "sha1"
-                                        ],
-                                        "data_path": "action_result.data.*.sha1",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "6c1948f7edf115cd1f13cd170b882077930be150"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "hash",
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "27ce020f7cdb4b775b80bd6e3ef1d16079401e0d45cfd28ffbd8c63ff2ddf7d7"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            72
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.verbose_msg",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Scan finished, information embedded"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            64
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.total_scans",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            72
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Positives: 64, Total scans: 72"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "hash": {
-                                        "contains": [
-                                            "hash",
-                                            "sha256",
-                                            "sha1",
-                                            "md5"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "File hash to query",
-                                        "key": "hash",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "VirusTotal",
-                                "product_vendor": "VirusTotal",
-                                "targets": "23",
-                                "type": "reputation"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "Virus Total reputation ch...."
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def Virus_Total_reputation_check(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Virus_Total_reputation_check() called')\n\n    # collect data for 'Virus_Total_reputation_check' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.fileHash', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'Virus_Total_reputation_check' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'hash': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"file reputation\", parameters=parameters, assets=['virus total'], callback=add_artifact_2, name=\"Virus_Total_reputation_check\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "Virus Total reputation check",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "bea3bda6-ebad-47d0-ae0a-2a031560cd8a",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 60,
-                        "line_start": 39,
-                        "message": "Configuring now",
-                        "name": "file reputation",
-                        "notes": "",
-                        "number": 1,
-                        "order": 3,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 380,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "Virus_Total_reputation_check",
-                        "required_params": {
-                            "hash": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 134
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "6a387a91-46bb-47f4-8c34-d77d5b98fccd",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "bea3bda6-ebad-47d0-ae0a-2a031560cd8a",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "68bc9413-3c1b-4268-8961-2484853e745f",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 135
-                    },
-                    {
-                        "action": "ip reputation",
-                        "action_type": "investigate",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "file": "artifact:*.cef.fileHash",
-                            "ip": "artifact:*.cef.logon_ip1"
-                        },
-                        "angle": 0,
-                        "app": "",
-                        "appid": "",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "ip reputation",
-                                "actions": [
-                                    "detonate url",
-                                    "detonate file",
-                                    "get report",
-                                    "get file",
-                                    "ip reputation",
-                                    "domain reputation",
-                                    "url reputation",
-                                    "file reputation",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "VirusTotal",
-                                "app_version": "2.0.25",
-                                "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
-                                "asset_name": "virustotal",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "ip": "artifact:*.cef.logon_ip1"
-                                },
-                                "has_app": true,
-                                "id": 6,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "virustotal",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "IP",
-                                        "column_order": 0,
-                                        "contains": [
-                                            "ip",
-                                            "ipv6"
-                                        ],
-                                        "data_path": "action_result.parameter.ip",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "8.8.8.8"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "As Owner",
-                                        "column_order": 1,
-                                        "data_path": "action_result.data.*.as_owner",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Test Inc."
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "ASN",
-                                        "column_order": 2,
-                                        "data_path": "action_result.data.*.asn",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            15169
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.continent",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "NA"
-                                        ]
-                                    },
-                                    {
-                                        "column_name": "Country",
-                                        "column_order": 3,
-                                        "data_path": "action_result.data.*.country",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "US"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-02-01 08:27:02"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "95aea1163cd742d895f048de9b7f7ae83149ba2515b174dc6d5cfd910cb07ee3"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_communicating_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            61
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2017-09-28 14:00:34"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2b977b6342a624097b669fd2347ffbcbdc8a814369b5f431835793dbaa2251c8"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            57
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2018-02-14 12:35:57"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            25
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "6c16bbddc9dcbf447c44afb11387115ac657852fcdf30cf068cf6e11e8786212"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_referrer_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            70
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_urls.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            9
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_urls.*.scan_date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-02-01 07:31:41"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.detected_urls.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            67
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "url",
-                                            "file name"
-                                        ],
-                                        "data_path": "action_result.data.*.detected_urls.*.url",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "http://vanmaulop10.com/now/index.php?mail="
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.network",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "8.8.8.0/24"
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "host name"
-                                        ],
-                                        "data_path": "action_result.data.*.resolutions.*.hostname",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "*.o365answers.com"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.resolutions.*.last_resolved",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2015-12-10 00:00:00"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.response_code",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-02-01 09:03:52"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "414296de0c223c28910d99797701d4fa192208f4e30c32b0dc07da7602d7a4fb"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            57
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.date",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2019-01-30 20:23:21"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "23926e9185d8d43c02807a838ffb373cc1977726094a4e46807c66ada9dd7660"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            71
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "sha256"
-                                        ],
-                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.sha256",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "01e110d94eec3ec8abed7c9bb34fd7bcc3bd06c397ec83676431fc193be3b68e"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.total",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            55
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.undetected_urls.*",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "2018-10-01 03:53:53"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.verbose_msg",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "IP address in dataset"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.communicating_samples",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            100
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.detected_urls",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            100
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.downloaded_samples",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            11
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Downloaded samples: 11, Detected urls: 100, Communicating samples: 100"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_positives",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            0
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "ip": {
-                                        "contains": [
-                                            "ip",
-                                            "ipv6"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "IP to query",
-                                        "key": "ip",
-                                        "order": 0,
-                                        "primary": true,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "VirusTotal",
-                                "product_vendor": "VirusTotal",
-                                "targets": "6",
-                                "type": "reputation"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "ip reputation"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Investigate"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def ip_reputation_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('ip_reputation_1() called')\n\n    # collect data for 'ip_reputation_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.logon_ip1', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'ip_reputation_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'ip': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"ip reputation\", parameters=parameters, assets=['virustotal'], callback=add_artifact_1, name=\"ip_reputation_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": "0",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "5a6780ea-7416-4e10-8622-91afd2a600f7",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 39,
-                        "line_start": 18,
-                        "message": "Configuring now",
-                        "name": "ip reputation",
-                        "notes": "",
-                        "number": 1,
-                        "order": 2,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 380,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "hunt_file_1",
-                        "required_params": {
-                            "ip": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "action_assets",
-                        "status": "",
-                        "title": "Investigate",
-                        "type": "coa.Action",
-                        "warn": "",
-                        "z": 139
-                    },
-                    {
-                        "action": "add artifact",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "cef_dictionary": "",
-                            "cef_name": "file_reputation_from_Virustotal",
-                            "cef_value": "Virus_Total_reputation_check:action_result.summary.positives",
-                            "container_id": "",
-                            "contains": "",
-                            "label": "event",
-                            "name": "User created artifact",
-                            "run_automation": true,
-                            "source_data_identifier": "Virus_Total_reputation_check:artifact:*.source_data_identifier"
-                        },
-                        "angle": 0,
-                        "app": "Phantom",
-                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "add artifact",
-                                "actions": [
-                                    "no op",
-                                    "update list",
-                                    "get action result",
-                                    "create container",
-                                    "import container",
-                                    "export container",
-                                    "deflate item",
-                                    "add artifact",
-                                    "find listitem",
-                                    "add listitem",
-                                    "find artifacts",
-                                    "update artifact tags",
-                                    "add note",
-                                    "update artifact",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "Phantom",
-                                "app_version": "3.1.2",
-                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                                "asset_name": "phantom app",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "cef_dictionary": "",
-                                    "cef_name": "file_reputation_from_Virustotal",
-                                    "cef_value": "Virus_Total_reputation_check:action_result.summary.positives",
-                                    "container_id": "",
-                                    "contains": "",
-                                    "label": "event",
-                                    "name": "User created artifact",
-                                    "run_automation": true,
-                                    "source_data_identifier": "Virus_Total_reputation_check:artifact:*.source_data_identifier"
-                                },
-                                "has_app": true,
-                                "id": 24,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom app",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.cef_dictionary",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "{\"test_key\": \"test_value\"}"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.cef_name",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "*"
-                                        ],
-                                        "data_path": "action_result.parameter.cef_value",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_path": "action_result.parameter.container_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1234
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.contains",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "domain"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.label",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "event"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.name",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Artifact_demo"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.run_automation",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            true,
-                                            false
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.source_data_identifier",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.existing_artifact_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.failed",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            123
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.success",
-                                        "data_type": "boolean",
-                                        "example_values": [
-                                            true,
-                                            false
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.artifact_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            12345
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.container_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1234
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.summary.server",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "https://10.1.1.10"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Artifact id: 12345, Container id: 1234, Server: https://10.1.1.10"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "cef_dictionary": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "CEF JSON",
-                                        "key": "cef_dictionary",
-                                        "order": 6,
-                                        "required": false
-                                    },
-                                    "cef_name": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "CEF Name",
-                                        "key": "cef_name",
-                                        "order": 4,
-                                        "required": false,
-                                        "value_list": [
-                                            "act",
-                                            "app",
-                                            "applicationProtocol",
-                                            "baseEventCount",
-                                            "bytesIn",
-                                            "bytesOut",
-                                            "cat",
-                                            "cn1",
-                                            "cn1Label",
-                                            "cn2",
-                                            "cn2Label",
-                                            "cn3",
-                                            "cn3Label",
-                                            "cnt",
-                                            "cs1",
-                                            "cs1Label",
-                                            "cs2",
-                                            "cs2Label",
-                                            "cs3",
-                                            "cs3Label",
-                                            "cs4",
-                                            "cs4Label",
-                                            "cs5",
-                                            "cs5Label",
-                                            "cs6",
-                                            "cs6Label",
-                                            "destinationAddress",
-                                            "destinationDnsDomain",
-                                            "destinationHostName",
-                                            "destinationMacAddress",
-                                            "destinationNtDomain",
-                                            "destinationPort",
-                                            "destinationProcessName",
-                                            "destinationServiceName",
-                                            "destinationTranslatedAddress",
-                                            "destinationTranslatedPort",
-                                            "destinationUserId",
-                                            "destinationUserName",
-                                            "destinationUserPrivileges",
-                                            "deviceAction",
-                                            "deviceAddress",
-                                            "deviceCustomDate1",
-                                            "deviceCustomDate1Label",
-                                            "deviceCustomDate2",
-                                            "deviceCustomDate2Label",
-                                            "deviceCustomNumber1",
-                                            "deviceCustomNumber1Label",
-                                            "deviceCustomNumber2",
-                                            "deviceCustomNumber2Label",
-                                            "deviceCustomNumber3",
-                                            "deviceCustomNumber3Label",
-                                            "deviceCustomString1",
-                                            "deviceCustomString1Label",
-                                            "deviceCustomString2",
-                                            "deviceCustomString2Label",
-                                            "deviceCustomString3",
-                                            "deviceCustomString3Label",
-                                            "deviceCustomString4",
-                                            "deviceCustomString4Label",
-                                            "deviceCustomString5",
-                                            "deviceCustomString5Label",
-                                            "deviceCustomString6",
-                                            "deviceCustomString6Label",
-                                            "deviceDirection",
-                                            "deviceDnsDomain",
-                                            "deviceEventCategory",
-                                            "deviceExternalId",
-                                            "deviceFacility",
-                                            "deviceHostname",
-                                            "deviceInboundInterface",
-                                            "deviceMacAddress",
-                                            "deviceOutboundInterface",
-                                            "deviceProcessName",
-                                            "deviceTranslatedAddress",
-                                            "dhost",
-                                            "dmac",
-                                            "dntdom",
-                                            "dpriv",
-                                            "dproc",
-                                            "dpt",
-                                            "dst",
-                                            "duid",
-                                            "duser",
-                                            "dvc",
-                                            "dvchost",
-                                            "end",
-                                            "endTime",
-                                            "eventOutcome",
-                                            "externalId",
-                                            "fileCreateTime",
-                                            "fileHash",
-                                            "fileHashMd5",
-                                            "fileHashSha1",
-                                            "fileHashSha256",
-                                            "fileHashSha512",
-                                            "fileId",
-                                            "fileModificationTime",
-                                            "fileName",
-                                            "filePath",
-                                            "filePermission",
-                                            "fileSize",
-                                            "fileType",
-                                            "fname",
-                                            "fsize",
-                                            "in",
-                                            "message",
-                                            "msg",
-                                            "oldfileCreateTime",
-                                            "oldfileHash",
-                                            "oldfileId",
-                                            "oldfileModificationTime",
-                                            "oldfileName",
-                                            "oldfilePath",
-                                            "oldfilePermission",
-                                            "oldfileType",
-                                            "oldfsize",
-                                            "out",
-                                            "outcome",
-                                            "proto",
-                                            "receiptTime",
-                                            "request",
-                                            "requestClientApplication",
-                                            "requestCookies",
-                                            "requestMethod",
-                                            "requestURL",
-                                            "rt",
-                                            "shost",
-                                            "smac",
-                                            "sntdom",
-                                            "sourceAddress",
-                                            "sourceDnsDomain",
-                                            "sourceHostName",
-                                            "sourceMacAddress",
-                                            "sourceNtDomain",
-                                            "sourcePort",
-                                            "sourceServiceName",
-                                            "sourceTranslatedAddress",
-                                            "sourceTranslatedPort",
-                                            "sourceUserId",
-                                            "sourceUserName",
-                                            "sourceUserPrivileges",
-                                            "spriv",
-                                            "spt",
-                                            "src",
-                                            "start",
-                                            "startTime",
-                                            "suid",
-                                            "suser",
-                                            "transportProtocol"
-                                        ]
-                                    },
-                                    "cef_value": {
-                                        "contains": [
-                                            "*"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Value",
-                                        "key": "cef_value",
-                                        "order": 5,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "container_id": {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Numeric container ID for the new artifact",
-                                        "key": "container_id",
-                                        "order": 1,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "contains": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Data type for each CEF field",
-                                        "key": "contains",
-                                        "order": 7,
-                                        "required": false
-                                    },
-                                    "label": {
-                                        "data_type": "string",
-                                        "default": "event",
-                                        "description": "Artifact label (default: event)",
-                                        "key": "label",
-                                        "order": 2,
-                                        "required": false
-                                    },
-                                    "name": {
-                                        "data_type": "string",
-                                        "default": "User created artifact",
-                                        "description": "Name of the new artifact",
-                                        "key": "name",
-                                        "order": 0,
-                                        "required": false
-                                    },
-                                    "run_automation": {
-                                        "data_type": "boolean",
-                                        "default": true,
-                                        "description": "Run automation on newly created artifact(s) (default: true)",
-                                        "key": "run_automation",
-                                        "order": 8,
-                                        "required": false
-                                    },
-                                    "source_data_identifier": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Source Data Idenitifier",
-                                        "key": "source_data_identifier",
-                                        "order": 3,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Phantom",
-                                "product_vendor": "Phantom",
-                                "targets": "24",
-                                "type": "information"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "add artifact 2"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def add_artifact_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_artifact_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_artifact_2' call\n    results_data_1 = phantom.collect2(container=container, datapath=['Virus_Total_reputation_check:action_result.summary.positives', 'Virus_Total_reputation_check:action_result.parameter.context.artifact_id'], action_results=results)\n    inputs_data_1 = phantom.collect2(container=container, datapath=['Virus_Total_reputation_check:artifact:*.source_data_identifier', 'Virus_Total_reputation_check:artifact:*.id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'add_artifact_2' call\n    for results_item_1 in results_data_1:\n        for inputs_item_1 in inputs_data_1:\n            if inputs_item_1[0]:\n                parameters.append({\n                    'name': \"User created artifact\",\n                    'label': \"event\",\n                    'cef_name': \"file_reputation_from_Virustotal\",\n                    'contains': \"\",\n                    'cef_value': results_item_1[0],\n                    'container_id': \"\",\n                    'cef_dictionary': \"\",\n                    'run_automation': \"true\",\n                    'source_data_identifier': inputs_item_1[0],\n                    # context (artifact id) is added to associate results with the artifact\n                    'context': {'artifact_id': results_item_1[1]},\n                })\n\n    phantom.act(action=\"add artifact\", parameters=parameters, assets=['phantom app'], name=\"add_artifact_2\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "Virus Total reputation check",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "68bc9413-3c1b-4268-8961-2484853e745f",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 126,
-                        "line_start": 93,
-                        "message": "Configuring now",
-                        "name": "add artifact",
-                        "notes": "",
-                        "number": 2,
-                        "order": 5,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 720,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_artifact_2",
-                        "required_params": {
-                            "source_data_identifier": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 142
                     },
                     {
                         "action": "add artifact",
@@ -2546,7 +867,7 @@
                         ],
                         "attrs": {
                             ".action": {
-                                "text": "add artifact 1"
+                                "text": "add artifact"
                             },
                             ".background": {
                                 "fill": "#000000",
@@ -2618,7 +939,7 @@
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "ip reputation",
+                        "connection_name": "ip reputation 1",
                         "connection_type": "action",
                         "custom_callback": "",
                         "custom_code": "",
@@ -2637,8 +958,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 93,
-                        "line_start": 60,
+                        "line_end": 88,
+                        "line_start": 55,
                         "message": "Configuring now",
                         "name": "add artifact",
                         "notes": "",
@@ -2709,7 +1030,7 @@
                             "source_data_identifier": true
                         },
                         "reviewer": "",
-                        "show_number": true,
+                        "show_number": false,
                         "size": {
                             "height": 100,
                             "width": 180
@@ -2720,6 +1041,1747 @@
                         "type": "coa.Action",
                         "warn": false,
                         "z": 143
+                    },
+                    {
+                        "action": "ip reputation",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "file": "artifact:*.cef.fileHash",
+                            "ip": "artifact:*.cef.logon_ip1"
+                        },
+                        "angle": 0,
+                        "app": "",
+                        "appid": "",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "ip reputation",
+                                "actions": [
+                                    "detonate url",
+                                    "detonate file",
+                                    "get report",
+                                    "get file",
+                                    "ip reputation",
+                                    "domain reputation",
+                                    "url reputation",
+                                    "file reputation",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "VirusTotal",
+                                "app_version": "2.0.25",
+                                "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
+                                "asset_name": "virustotal",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "ip": "artifact:*.cef.logon_ip1"
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "virustotal",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "IP",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "ip",
+                                            "ipv6"
+                                        ],
+                                        "data_path": "action_result.parameter.ip",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "8.8.8.8"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "As Owner",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.as_owner",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Test Inc."
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "ASN",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.asn",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            15169
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.continent",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "NA"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Country",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.country",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "US"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-02-01 08:27:02"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "95aea1163cd742d895f048de9b7f7ae83149ba2515b174dc6d5cfd910cb07ee3"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            61
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2017-09-28 14:00:34"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2b977b6342a624097b669fd2347ffbcbdc8a814369b5f431835793dbaa2251c8"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            57
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2018-02-14 12:35:57"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            25
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "6c16bbddc9dcbf447c44afb11387115ac657852fcdf30cf068cf6e11e8786212"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            70
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_urls.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            9
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_urls.*.scan_date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-02-01 07:31:41"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_urls.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            67
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url",
+                                            "file name"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_urls.*.url",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "http://vanmaulop10.com/now/index.php?mail="
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.network",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "8.8.8.0/24"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.data.*.resolutions.*.hostname",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "*.o365answers.com"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.resolutions.*.last_resolved",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2015-12-10 00:00:00"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.response_code",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-02-01 09:03:52"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "414296de0c223c28910d99797701d4fa192208f4e30c32b0dc07da7602d7a4fb"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            57
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-01-30 20:23:21"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "23926e9185d8d43c02807a838ffb373cc1977726094a4e46807c66ada9dd7660"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            71
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "01e110d94eec3ec8abed7c9bb34fd7bcc3bd06c397ec83676431fc193be3b68e"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            55
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_urls.*",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2018-10-01 03:53:53"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.verbose_msg",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "IP address in dataset"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.communicating_samples",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            100
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.detected_urls",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            100
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.downloaded_samples",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            11
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Downloaded samples: 11, Detected urls: 100, Communicating samples: 100"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "ip": {
+                                        "contains": [
+                                            "ip",
+                                            "ipv6"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "IP to query",
+                                        "key": "ip",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "VirusTotal",
+                                "product_vendor": "VirusTotal",
+                                "targets": "6",
+                                "type": "reputation"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "ip reputation 1"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def ip_reputation_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('ip_reputation_1() called')\n\n    # collect data for 'ip_reputation_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.logon_ip1', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'ip_reputation_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'ip': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"ip reputation\", parameters=parameters, assets=['virustotal'], callback=add_artifact_1, name=\"ip_reputation_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": "0",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "5a6780ea-7416-4e10-8622-91afd2a600f7",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 39,
+                        "line_start": 18,
+                        "message": "Configuring now",
+                        "name": "ip reputation",
+                        "notes": "",
+                        "number": 1,
+                        "order": 2,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 380,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "hunt_file_1",
+                        "required_params": {
+                            "ip": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 145
+                    },
+                    {
+                        "action": "ip reputation",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "hash": "artifact:*.cef.fileHash",
+                            "ip": ""
+                        },
+                        "angle": 0,
+                        "app": "VirusTotal",
+                        "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "ip reputation",
+                                "actions": [
+                                    "detonate url",
+                                    "detonate file",
+                                    "get report",
+                                    "get file",
+                                    "ip reputation",
+                                    "domain reputation",
+                                    "url reputation",
+                                    "file reputation",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "VirusTotal",
+                                "app_version": "2.0.25",
+                                "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
+                                "asset_name": "virustotal",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "ip": ""
+                                },
+                                "has_app": true,
+                                "id": 6,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "virustotal",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "IP",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "ip",
+                                            "ipv6"
+                                        ],
+                                        "data_path": "action_result.parameter.ip",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "8.8.8.8"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "As Owner",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.as_owner",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Test Inc."
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "ASN",
+                                        "column_order": 2,
+                                        "data_path": "action_result.data.*.asn",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            15169
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.continent",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "NA"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Country",
+                                        "column_order": 3,
+                                        "data_path": "action_result.data.*.country",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "US"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-02-01 08:27:02"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "95aea1163cd742d895f048de9b7f7ae83149ba2515b174dc6d5cfd910cb07ee3"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_communicating_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            61
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2017-09-28 14:00:34"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2b977b6342a624097b669fd2347ffbcbdc8a814369b5f431835793dbaa2251c8"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_downloaded_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            57
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2018-02-14 12:35:57"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            25
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "6c16bbddc9dcbf447c44afb11387115ac657852fcdf30cf068cf6e11e8786212"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_referrer_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            70
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_urls.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            9
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_urls.*.scan_date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-02-01 07:31:41"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.detected_urls.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            67
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url",
+                                            "file name"
+                                        ],
+                                        "data_path": "action_result.data.*.detected_urls.*.url",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "http://vanmaulop10.com/now/index.php?mail="
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.network",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "8.8.8.0/24"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.data.*.resolutions.*.hostname",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "*.o365answers.com"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.resolutions.*.last_resolved",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2015-12-10 00:00:00"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.response_code",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-02-01 09:03:52"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "414296de0c223c28910d99797701d4fa192208f4e30c32b0dc07da7602d7a4fb"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_communicating_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            57
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-01-30 20:23:21"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "23926e9185d8d43c02807a838ffb373cc1977726094a4e46807c66ada9dd7660"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_downloaded_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            71
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "01e110d94eec3ec8abed7c9bb34fd7bcc3bd06c397ec83676431fc193be3b68e"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_referrer_samples.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            55
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.undetected_urls.*",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2018-10-01 03:53:53"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.verbose_msg",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "IP address in dataset"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.communicating_samples",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            100
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.detected_urls",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            100
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.downloaded_samples",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            11
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Downloaded samples: 11, Detected urls: 100, Communicating samples: 100"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "ip": {
+                                        "contains": [
+                                            "ip",
+                                            "ipv6"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "IP to query",
+                                        "key": "ip",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "VirusTotal",
+                                "product_vendor": "VirusTotal",
+                                "targets": "6",
+                                "type": "reputation"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "ip reputation 2"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def ip_reputation_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('ip_reputation_2() called')\n\n    # collect data for 'ip_reputation_2' call\n\n    parameters = []\n    \n    # build parameters list for 'ip_reputation_2' call\n    parameters.append({\n        'ip': \"\",\n    })\n\n    phantom.act(action=\"ip reputation\", parameters=parameters, assets=['virustotal'], callback=update_artifact_1, name=\"ip_reputation_2\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "bea3bda6-ebad-47d0-ae0a-2a031560cd8a",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 55,
+                        "line_start": 39,
+                        "message": "Configuring now",
+                        "name": "ip reputation",
+                        "notes": "",
+                        "number": 2,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 380,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "ip_reputation_2",
+                        "required_params": {
+                            "ip": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 152
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "64568800-aae3-4634-885e-a3b668e72058",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "bea3bda6-ebad-47d0-ae0a-2a031560cd8a",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "4bad2044-5d29-41f8-ad0e-2e27b6d77694",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 153
+                    },
+                    {
+                        "action": "update artifact",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "artifact_id": "ip_reputation_2:action_result.status",
+                            "artifact_json": "",
+                            "cef_json": "",
+                            "cef_types_json": "",
+                            "label": "",
+                            "name": "ip_reputation_2:action_result.data.*.continent",
+                            "overwrite": "",
+                            "severity": "",
+                            "tags": ""
+                        },
+                        "angle": 0,
+                        "app": "",
+                        "appid": "",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "update artifact",
+                                "actions": [
+                                    "no op",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "3.0.10",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom_playbook",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "artifact_id": "ip_reputation_2:action_result.status",
+                                    "artifact_json": "",
+                                    "cef_json": "",
+                                    "cef_types_json": "",
+                                    "label": "",
+                                    "name": "ip_reputation_2:action_result.data.*.continent",
+                                    "overwrite": "",
+                                    "severity": "",
+                                    "tags": ""
+                                },
+                                "has_app": true,
+                                "id": 11,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom_playbook",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Artifact ID",
+                                        "column_order": 0,
+                                        "contains": [
+                                            "phantom artifact id"
+                                        ],
+                                        "data_path": "action_result.parameter.artifact_id",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2388"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.artifact_json",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"severity\": \"high\", \"label\": \"test label\", \"description\": \"Artifact added by Me\", \"source_data_identifier\": \"my_custom_sdi\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_json",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"new_field\": \"new_value\", \"deleted_field\": \"\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_types_json",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"new_field\": [\"new contains\"]}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.label",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "test label"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "New Name"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.overwrite",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.severity",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "high"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.tags",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "[\"tag2\"]"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.cef.deleted_field",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.cef.new_field",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "new_value"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.cef.test",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "fff"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.cef_types.new_field",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "new contains"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.description",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact added by Me"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.label",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "test label"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "New Name"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.severity",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "high"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.source_data_identifier",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "my_custom_sdi"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.requested_artifact.tags",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "tag2"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.response.id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            2388
+                                        ]
+                                    },
+                                    {
+                                        "column_name": "Success",
+                                        "column_order": 1,
+                                        "data_path": "action_result.data.*.response.success",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact updated successfully."
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "artifact_id": {
+                                        "contains": [
+                                            "phantom artifact id"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "ID of artifact to update",
+                                        "key": "artifact_id",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    },
+                                    "artifact_json": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "JSON format of entire artifact (Always overwrites provided keys)",
+                                        "key": "artifact_json",
+                                        "order": 8,
+                                        "required": false
+                                    },
+                                    "cef_json": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "JSON format of the CEF fields you want in the artifact",
+                                        "key": "cef_json",
+                                        "order": 4,
+                                        "required": false
+                                    },
+                                    "cef_types_json": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "JSON format of the CEF types (e.g., {'myIP': ['ip', 'ipv6']})",
+                                        "key": "cef_types_json",
+                                        "order": 5,
+                                        "required": false
+                                    },
+                                    "label": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Artifact label (Always overwrites, if provided)",
+                                        "key": "label",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Artifact name (Always overwrites, if provided)",
+                                        "key": "name",
+                                        "order": 1,
+                                        "required": false
+                                    },
+                                    "overwrite": {
+                                        "data_type": "boolean",
+                                        "default": null,
+                                        "description": "Overwrite artifacts with provided input (applies to: cef_json, contains_json, tags)",
+                                        "key": "overwrite",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "severity": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Artifact severity (Always overwrites, if provided)",
+                                        "key": "severity",
+                                        "order": 3,
+                                        "required": false
+                                    },
+                                    "tags": {
+                                        "allow_list": true,
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Comma-separated list of tags to add or replace in the artifact",
+                                        "key": "tags",
+                                        "order": 6,
+                                        "required": false
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "11",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "update artifact"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_artifact_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_2:action_result.status', 'ip_reputation_2:action_result.data.*.continent', 'ip_reputation_2:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'artifact_id': results_item_1[0],\n                'name': results_item_1[1],\n                'label': \"\",\n                'severity': \"\",\n                'cef_json': \"\",\n                'cef_types_json': \"\",\n                'tags': \"\",\n                'overwrite': \"\",\n                'artifact_json': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[2]},\n            })\n\n    phantom.act(action=\"update artifact\", parameters=parameters, assets=['phantom_playbook'], name=\"update_artifact_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "ip reputation 2",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "4bad2044-5d29-41f8-ad0e-2e27b6d77694",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 119,
+                        "line_start": 88,
+                        "message": "Configuring now",
+                        "name": "update artifact",
+                        "notes": "",
+                        "number": 1,
+                        "order": 5,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 760,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "update_artifact_1",
+                        "required_params": {
+                            "artifact_id": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 155
                     }
                 ]
             },
@@ -2729,7 +2791,7 @@
         "schema": 4,
         "version": "4.10.1.45070"
     },
-    "create_time": "2021-04-26T14:29:40.714456+00:00",
+    "create_time": "2021-04-26T14:34:37.991566+00:00",
     "draft_mode": false,
     "labels": [
         "*"
