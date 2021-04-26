@@ -90,27 +90,28 @@ def update_artifact_1(action=None, success=None, container=None, results=None, h
         
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
+    id_value = container.get('id', None)
+
     # collect data for 'update_artifact_1' call
-    results_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_2:action_result.status', 'ip_reputation_2:action_result.data.*.continent', 'ip_reputation_2:action_result.parameter.context.artifact_id'], action_results=results)
+    inputs_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_2:artifact:*.id', 'ip_reputation_2:artifact:*.id'], action_results=results)
 
     parameters = []
     
     # build parameters list for 'update_artifact_1' call
-    for results_item_1 in results_data_1:
-        if results_item_1[0]:
-            parameters.append({
-                'artifact_id': results_item_1[0],
-                'name': results_item_1[1],
-                'label': "",
-                'severity': "",
-                'cef_json': "",
-                'cef_types_json': "",
-                'tags': "",
-                'overwrite': "",
-                'artifact_json': "",
-                # context (artifact id) is added to associate results with the artifact
-                'context': {'artifact_id': results_item_1[2]},
-            })
+    for inputs_item_1 in inputs_data_1:
+        parameters.append({
+            'artifact_id': id_value,
+            'name': "",
+            'label': "",
+            'severity': "",
+            'cef_json': "",
+            'cef_types_json': inputs_item_1[0],
+            'tags': "",
+            'overwrite': "",
+            'artifact_json': "",
+            # context (artifact id) is added to associate results with the artifact
+            'context': {'artifact_id': inputs_item_1[1]},
+        })
 
     phantom.act(action="update artifact", parameters=parameters, assets=['phantom_playbook'], name="update_artifact_1", parent_action=action)
 

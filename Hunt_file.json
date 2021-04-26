@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "8e12bd5bedd193f0156956c06241d673b5268228",
+            "hash": "8f01ecc06210297302cfeaa2ea4d781152585a08",
             "joint": {
                 "cells": [
                     {
@@ -295,8 +295,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 132,
-                        "line_start": 119,
+                        "line_end": 133,
+                        "line_start": 120,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -2291,12 +2291,12 @@
                         "active": false,
                         "active_keys": {},
                         "active_values": {
-                            "artifact_id": "ip_reputation_2:action_result.status",
+                            "artifact_id": "container:id",
                             "artifact_json": "",
                             "cef_json": "",
-                            "cef_types_json": "",
+                            "cef_types_json": "ip_reputation_2:artifact:*.id",
                             "label": "",
-                            "name": "ip_reputation_2:action_result.data.*.continent",
+                            "name": "",
                             "overwrite": "",
                             "severity": "",
                             "tags": ""
@@ -2333,12 +2333,12 @@
                                 "config_type": "asset",
                                 "count": 0,
                                 "fields": {
-                                    "artifact_id": "ip_reputation_2:action_result.status",
+                                    "artifact_id": "container:id",
                                     "artifact_json": "",
                                     "cef_json": "",
-                                    "cef_types_json": "",
+                                    "cef_types_json": "ip_reputation_2:artifact:*.id",
                                     "label": "",
-                                    "name": "ip_reputation_2:action_result.data.*.continent",
+                                    "name": "",
                                     "overwrite": "",
                                     "severity": "",
                                     "tags": ""
@@ -2672,9 +2672,12 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.timer image": {
+                                "opacity": 1
                             }
                         },
-                        "block_code": "def update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_artifact_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_2:action_result.status', 'ip_reputation_2:action_result.data.*.continent', 'ip_reputation_2:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_1' call\n    for results_item_1 in results_data_1:\n        if results_item_1[0]:\n            parameters.append({\n                'artifact_id': results_item_1[0],\n                'name': results_item_1[1],\n                'label': \"\",\n                'severity': \"\",\n                'cef_json': \"\",\n                'cef_types_json': \"\",\n                'tags': \"\",\n                'overwrite': \"\",\n                'artifact_json': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': results_item_1[2]},\n            })\n\n    phantom.act(action=\"update artifact\", parameters=parameters, assets=['phantom_playbook'], name=\"update_artifact_1\", parent_action=action)\n\n    return",
+                        "block_code": "def update_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_artifact_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    id_value = container.get('id', None)\n\n    # collect data for 'update_artifact_1' call\n    inputs_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_2:artifact:*.id', 'ip_reputation_2:artifact:*.id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'update_artifact_1' call\n    for inputs_item_1 in inputs_data_1:\n        parameters.append({\n            'artifact_id': id_value,\n            'name': \"\",\n            'label': \"\",\n            'severity': \"\",\n            'cef_json': \"\",\n            'cef_types_json': inputs_item_1[0],\n            'tags': \"\",\n            'overwrite': \"\",\n            'artifact_json': \"\",\n            # context (artifact id) is added to associate results with the artifact\n            'context': {'artifact_id': inputs_item_1[1]},\n        })\n\n    phantom.act(action=\"update artifact\", parameters=parameters, assets=['phantom_playbook'], name=\"update_artifact_1\", parent_action=action)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -2686,7 +2689,7 @@
                         "custom_code": "",
                         "custom_join": "",
                         "custom_name": "",
-                        "delay": 0,
+                        "delay": "0",
                         "description": "",
                         "has_custom": false,
                         "has_custom_block": false,
@@ -2699,7 +2702,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 119,
+                        "line_end": 120,
                         "line_start": 88,
                         "message": "Configuring now",
                         "name": "update artifact",
@@ -2791,7 +2794,7 @@
         "schema": 4,
         "version": "4.10.1.45070"
     },
-    "create_time": "2021-04-26T14:34:37.991566+00:00",
+    "create_time": "2021-04-26T14:40:40.600899+00:00",
     "draft_mode": false,
     "labels": [
         "*"
