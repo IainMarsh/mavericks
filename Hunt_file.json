@@ -1,0 +1,2398 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Uncategorized",
+    "coa": {
+        "data": {
+            "clean": true,
+            "code_block": "",
+            "description": "",
+            "joint": {
+                "cells": [
+                    {
+                        "0": "S",
+                        "1": "T",
+                        "2": "A",
+                        "3": "R",
+                        "4": "T",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "ref-x": 33,
+                                "ref-y": 8,
+                                "text": "START"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "ref-x": 13,
+                                "xlink:href": "/inc/coa/img/block_icon_start.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'TruStar_Reputation_check' block\n    TruStar_Reputation_check(container=container)\n\n    # call 'Virus_Total_reputation_check' block\n    Virus_Total_reputation_check(container=container)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "addb3d05-f080-40bf-b6db-acaaf1762341",
+                        "inPorts": [],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 18,
+                        "line_start": 7,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 100,
+                            "y": 100
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "START",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 1
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "c9265807-8e06-49ea-b44a-4a0f5e1c6299",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "addb3d05-f080-40bf-b6db-acaaf1762341",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "5a6780ea-7416-4e10-8622-91afd2a600f7",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 3
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "6b2e59a2-86b1-4bf5-b596-643154ae11d4",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "addb3d05-f080-40bf-b6db-acaaf1762341",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "bea3bda6-ebad-47d0-ae0a-2a031560cd8a",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 6
+                    },
+                    {
+                        "0": "E",
+                        "1": "N",
+                        "2": "D",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".title": {
+                                "text": "END"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "e7981d55-055f-4529-bc63-1352bf9abb4c",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 139,
+                        "line_start": 126,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 6,
+                        "outPorts": [],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 300,
+                            "y": 500
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "END",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 31
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "98dc4a48-302c-4b1c-8c5a-3e13d6b284f4",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "5a6780ea-7416-4e10-8622-91afd2a600f7",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "1cf4692c-b6d7-4c2c-a205-9517ba7524fb",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 75
+                    },
+                    {
+                        "action": "hunt file",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "file": "artifact:*.cef.fileHash"
+                        },
+                        "angle": 0,
+                        "app": "TruSTAR",
+                        "appid": "536ae6e0-72b2-4ae1-9520-810acaddd2d1",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "hunt file",
+                                "actions": [
+                                    "submit report",
+                                    "get report",
+                                    "hunt bitcoin address",
+                                    "hunt registry key",
+                                    "hunt malware",
+                                    "hunt cve",
+                                    "hunt email",
+                                    "hunt file",
+                                    "hunt url",
+                                    "hunt ip",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "TruSTAR",
+                                "app_version": "1.0.19",
+                                "appid": "536ae6e0-72b2-4ae1-9520-810acaddd2d1",
+                                "asset_name": "trustar_phantom",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "file": "artifact:*.cef.fileHash"
+                                },
+                                "has_app": true,
+                                "id": 9,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "trustar_phantom",
+                                "output": [
+                                    {
+                                        "contains": [
+                                            "trustar report id"
+                                        ],
+                                        "data_path": "action_result.data.*.report_id",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "hash",
+                                            "file name",
+                                            "md5",
+                                            "sha1",
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.parameter.file",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.total_correlated_reports",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "file": {
+                                        "contains": [
+                                            "hash",
+                                            "file name",
+                                            "md5",
+                                            "sha1",
+                                            "sha256"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "File to hunt",
+                                        "key": "file",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "TruSTAR",
+                                "product_vendor": "TruSTAR Technology",
+                                "targets": "9",
+                                "type": "investigative"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "TruStar Reputation check"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def TruStar_Reputation_check(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('TruStar_Reputation_check() called')\n\n    # collect data for 'TruStar_Reputation_check' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.fileHash', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'TruStar_Reputation_check' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'file': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"hunt file\", parameters=parameters, assets=['trustar_phantom'], callback=add_artifact_1, name=\"TruStar_Reputation_check\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "TruStar Reputation check",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "5a6780ea-7416-4e10-8622-91afd2a600f7",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 39,
+                        "line_start": 18,
+                        "message": "Configuring now",
+                        "name": "hunt file",
+                        "notes": "",
+                        "number": 1,
+                        "order": 2,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 380,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "TruStar_Reputation_check",
+                        "required_params": {
+                            "file": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 122
+                    },
+                    {
+                        "action": "file reputation",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "hash": "artifact:*.cef.fileHash"
+                        },
+                        "angle": 0,
+                        "app": "VirusTotal",
+                        "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "file reputation",
+                                "actions": [
+                                    "detonate url",
+                                    "detonate file",
+                                    "get report",
+                                    "get file",
+                                    "ip reputation",
+                                    "domain reputation",
+                                    "url reputation",
+                                    "file reputation",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "VirusTotal",
+                                "app_version": "2.0.28",
+                                "appid": "11f676a4-f3d4-4db0-8587-f4e942c07c7c",
+                                "asset_name": "virus total",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "hash": "artifact:*.cef.fileHash"
+                                },
+                                "has_app": true,
+                                "id": 23,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "virus total",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "hash",
+                                            "sha256",
+                                            "sha1",
+                                            "md5"
+                                        ],
+                                        "data_path": "action_result.parameter.hash",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "6c1948f7edf115cd1f13cd170b882077930be150"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "hash",
+                                            "md5"
+                                        ],
+                                        "data_path": "action_result.data.*.md5",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "494303294715f5ffad7ad3f43b73b00b"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.data.*.permalink",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://www.test.com/file/27ce020f7cdb4b775b80bd6e3ef1d16079401e0d45cfd28ffbd8c63ff2ddf7d7/analysis/1548112684/"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            64
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "sha1"
+                                        ],
+                                        "data_path": "action_result.data.*.resource",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "6c1948f7edf115cd1f13cd170b882077930be150"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.response_code",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.scan_date",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "2019-01-21 23:18:04"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "virustotal scan id"
+                                        ],
+                                        "data_path": "action_result.data.*.scan_id",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "27ce020f7cdb4b775b80bd6e3ef1d16079401e0d45cfd28ffbd8c63ff2ddf7d7-1548112684"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.scans.*.detected",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.scans.*.result",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.scans.*.update",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.scans.*.version",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "hash",
+                                            "sha1"
+                                        ],
+                                        "data_path": "action_result.data.*.sha1",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "6c1948f7edf115cd1f13cd170b882077930be150"
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "hash",
+                                            "sha256"
+                                        ],
+                                        "data_path": "action_result.data.*.sha256",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "27ce020f7cdb4b775b80bd6e3ef1d16079401e0d45cfd28ffbd8c63ff2ddf7d7"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.total",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            72
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.verbose_msg",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Scan finished, information embedded"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            64
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.total_scans",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            72
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Positives: 64, Total scans: 72"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_positives",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "hash": {
+                                        "contains": [
+                                            "hash",
+                                            "sha256",
+                                            "sha1",
+                                            "md5"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "File hash to query",
+                                        "key": "hash",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "VirusTotal",
+                                "product_vendor": "VirusTotal",
+                                "targets": "23",
+                                "type": "reputation"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "Virus Total reputation ch...."
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def Virus_Total_reputation_check(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Virus_Total_reputation_check() called')\n\n    # collect data for 'Virus_Total_reputation_check' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.fileHash', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'Virus_Total_reputation_check' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'hash': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"file reputation\", parameters=parameters, assets=['virus total'], callback=add_artifact_2, name=\"Virus_Total_reputation_check\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Virus Total reputation check",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "bea3bda6-ebad-47d0-ae0a-2a031560cd8a",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 60,
+                        "line_start": 39,
+                        "message": "Configuring now",
+                        "name": "file reputation",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 380,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "Virus_Total_reputation_check",
+                        "required_params": {
+                            "hash": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 134
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "6a387a91-46bb-47f4-8c34-d77d5b98fccd",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "bea3bda6-ebad-47d0-ae0a-2a031560cd8a",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "68bc9413-3c1b-4268-8961-2484853e745f",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 135
+                    },
+                    {
+                        "action": "add artifact",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "cef_dictionary": "",
+                            "cef_name": "file_reputation_from_Virustotal",
+                            "cef_value": "Virus_Total_reputation_check:action_result.summary.positives",
+                            "container_id": "",
+                            "contains": "",
+                            "label": "event",
+                            "name": "User created artifact",
+                            "run_automation": true,
+                            "source_data_identifier": "Virus_Total_reputation_check:artifact:*.source_data_identifier"
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "add artifact",
+                                "actions": [
+                                    "no op",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "3.1.2",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom app",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "cef_dictionary": "",
+                                    "cef_name": "file_reputation_from_Virustotal",
+                                    "cef_value": "Virus_Total_reputation_check:action_result.summary.positives",
+                                    "container_id": "",
+                                    "contains": "",
+                                    "label": "event",
+                                    "name": "User created artifact",
+                                    "run_automation": true,
+                                    "source_data_identifier": "Virus_Total_reputation_check:artifact:*.source_data_identifier"
+                                },
+                                "has_app": true,
+                                "id": 24,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom app",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_dictionary",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"test_key\": \"test_value\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_path": "action_result.parameter.cef_value",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.contains",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "domain"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.label",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "event"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact_demo"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.run_automation",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.source_data_identifier",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.existing_artifact_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.failed",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            123
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.success",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.artifact_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            12345
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.server",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact id: 12345, Container id: 1234, Server: https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "cef_dictionary": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF JSON",
+                                        "key": "cef_dictionary",
+                                        "order": 6,
+                                        "required": false
+                                    },
+                                    "cef_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF Name",
+                                        "key": "cef_name",
+                                        "order": 4,
+                                        "required": false,
+                                        "value_list": [
+                                            "act",
+                                            "app",
+                                            "applicationProtocol",
+                                            "baseEventCount",
+                                            "bytesIn",
+                                            "bytesOut",
+                                            "cat",
+                                            "cn1",
+                                            "cn1Label",
+                                            "cn2",
+                                            "cn2Label",
+                                            "cn3",
+                                            "cn3Label",
+                                            "cnt",
+                                            "cs1",
+                                            "cs1Label",
+                                            "cs2",
+                                            "cs2Label",
+                                            "cs3",
+                                            "cs3Label",
+                                            "cs4",
+                                            "cs4Label",
+                                            "cs5",
+                                            "cs5Label",
+                                            "cs6",
+                                            "cs6Label",
+                                            "destinationAddress",
+                                            "destinationDnsDomain",
+                                            "destinationHostName",
+                                            "destinationMacAddress",
+                                            "destinationNtDomain",
+                                            "destinationPort",
+                                            "destinationProcessName",
+                                            "destinationServiceName",
+                                            "destinationTranslatedAddress",
+                                            "destinationTranslatedPort",
+                                            "destinationUserId",
+                                            "destinationUserName",
+                                            "destinationUserPrivileges",
+                                            "deviceAction",
+                                            "deviceAddress",
+                                            "deviceCustomDate1",
+                                            "deviceCustomDate1Label",
+                                            "deviceCustomDate2",
+                                            "deviceCustomDate2Label",
+                                            "deviceCustomNumber1",
+                                            "deviceCustomNumber1Label",
+                                            "deviceCustomNumber2",
+                                            "deviceCustomNumber2Label",
+                                            "deviceCustomNumber3",
+                                            "deviceCustomNumber3Label",
+                                            "deviceCustomString1",
+                                            "deviceCustomString1Label",
+                                            "deviceCustomString2",
+                                            "deviceCustomString2Label",
+                                            "deviceCustomString3",
+                                            "deviceCustomString3Label",
+                                            "deviceCustomString4",
+                                            "deviceCustomString4Label",
+                                            "deviceCustomString5",
+                                            "deviceCustomString5Label",
+                                            "deviceCustomString6",
+                                            "deviceCustomString6Label",
+                                            "deviceDirection",
+                                            "deviceDnsDomain",
+                                            "deviceEventCategory",
+                                            "deviceExternalId",
+                                            "deviceFacility",
+                                            "deviceHostname",
+                                            "deviceInboundInterface",
+                                            "deviceMacAddress",
+                                            "deviceOutboundInterface",
+                                            "deviceProcessName",
+                                            "deviceTranslatedAddress",
+                                            "dhost",
+                                            "dmac",
+                                            "dntdom",
+                                            "dpriv",
+                                            "dproc",
+                                            "dpt",
+                                            "dst",
+                                            "duid",
+                                            "duser",
+                                            "dvc",
+                                            "dvchost",
+                                            "end",
+                                            "endTime",
+                                            "eventOutcome",
+                                            "externalId",
+                                            "fileCreateTime",
+                                            "fileHash",
+                                            "fileHashMd5",
+                                            "fileHashSha1",
+                                            "fileHashSha256",
+                                            "fileHashSha512",
+                                            "fileId",
+                                            "fileModificationTime",
+                                            "fileName",
+                                            "filePath",
+                                            "filePermission",
+                                            "fileSize",
+                                            "fileType",
+                                            "fname",
+                                            "fsize",
+                                            "in",
+                                            "message",
+                                            "msg",
+                                            "oldfileCreateTime",
+                                            "oldfileHash",
+                                            "oldfileId",
+                                            "oldfileModificationTime",
+                                            "oldfileName",
+                                            "oldfilePath",
+                                            "oldfilePermission",
+                                            "oldfileType",
+                                            "oldfsize",
+                                            "out",
+                                            "outcome",
+                                            "proto",
+                                            "receiptTime",
+                                            "request",
+                                            "requestClientApplication",
+                                            "requestCookies",
+                                            "requestMethod",
+                                            "requestURL",
+                                            "rt",
+                                            "shost",
+                                            "smac",
+                                            "sntdom",
+                                            "sourceAddress",
+                                            "sourceDnsDomain",
+                                            "sourceHostName",
+                                            "sourceMacAddress",
+                                            "sourceNtDomain",
+                                            "sourcePort",
+                                            "sourceServiceName",
+                                            "sourceTranslatedAddress",
+                                            "sourceTranslatedPort",
+                                            "sourceUserId",
+                                            "sourceUserName",
+                                            "sourceUserPrivileges",
+                                            "spriv",
+                                            "spt",
+                                            "src",
+                                            "start",
+                                            "startTime",
+                                            "suid",
+                                            "suser",
+                                            "transportProtocol"
+                                        ]
+                                    },
+                                    "cef_value": {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Value",
+                                        "key": "cef_value",
+                                        "order": 5,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "container_id": {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Numeric container ID for the new artifact",
+                                        "key": "container_id",
+                                        "order": 1,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "contains": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Data type for each CEF field",
+                                        "key": "contains",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "label": {
+                                        "data_type": "string",
+                                        "default": "event",
+                                        "description": "Artifact label (default: event)",
+                                        "key": "label",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "name": {
+                                        "data_type": "string",
+                                        "default": "User created artifact",
+                                        "description": "Name of the new artifact",
+                                        "key": "name",
+                                        "order": 0,
+                                        "required": false
+                                    },
+                                    "run_automation": {
+                                        "data_type": "boolean",
+                                        "default": true,
+                                        "description": "Run automation on newly created artifact(s) (default: true)",
+                                        "key": "run_automation",
+                                        "order": 8,
+                                        "required": false
+                                    },
+                                    "source_data_identifier": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Source Data Idenitifier",
+                                        "key": "source_data_identifier",
+                                        "order": 3,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "24",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "add artifact 2"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def add_artifact_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_artifact_2() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_artifact_2' call\n    results_data_1 = phantom.collect2(container=container, datapath=['Virus_Total_reputation_check:action_result.summary.positives', 'Virus_Total_reputation_check:action_result.parameter.context.artifact_id'], action_results=results)\n    inputs_data_1 = phantom.collect2(container=container, datapath=['Virus_Total_reputation_check:artifact:*.source_data_identifier', 'Virus_Total_reputation_check:artifact:*.id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'add_artifact_2' call\n    for results_item_1 in results_data_1:\n        for inputs_item_1 in inputs_data_1:\n            if inputs_item_1[0]:\n                parameters.append({\n                    'name': \"User created artifact\",\n                    'container_id': \"\",\n                    'label': \"event\",\n                    'source_data_identifier': inputs_item_1[0],\n                    'cef_name': \"file_reputation_from_Virustotal\",\n                    'cef_value': results_item_1[0],\n                    'cef_dictionary': \"\",\n                    'contains': \"\",\n                    'run_automation': \"true\",\n                    # context (artifact id) is added to associate results with the artifact\n                    'context': {'artifact_id': inputs_item_1[1]},\n                })\n\n    phantom.act(action=\"add artifact\", parameters=parameters, assets=['phantom app'], name=\"add_artifact_2\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "Virus Total reputation check",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "68bc9413-3c1b-4268-8961-2484853e745f",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 126,
+                        "line_start": 93,
+                        "message": "Configuring now",
+                        "name": "add artifact",
+                        "notes": "",
+                        "number": 2,
+                        "order": 5,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 720,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_artifact_2",
+                        "required_params": {
+                            "source_data_identifier": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 137
+                    },
+                    {
+                        "action": "add artifact",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "action_name": "TruStar_Reputation_check:action_result.summary.total_correlated_reports",
+                            "app": "",
+                            "artifact_id": "artifact:*.source_data_identifier",
+                            "artifact_json": "",
+                            "asset": "",
+                            "cef_dictionary": "",
+                            "cef_json": "",
+                            "cef_name": "file_reputation_from_TruStar",
+                            "cef_types_json": "{     \"file_reputation_from_TruStar\": \"TruStar_Reputation_check:action_result.summary.total_correlated_reports\" }",
+                            "cef_value": "TruStar_Reputation_check:action_result.summary.total_correlated_reports",
+                            "container_id": "",
+                            "contains": "",
+                            "label": "event",
+                            "max_results": 10,
+                            "name": "User created artifact",
+                            "overwrite": "",
+                            "parameters": "TruStar_Reputation_check:artifact:*.cef.file_reputation_from_TruStar",
+                            "run_automation": true,
+                            "severity": "",
+                            "source_data_identifier": "TruStar_Reputation_check:artifact:*.source_data_identifier",
+                            "tags": "",
+                            "time_limit": ""
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "add artifact",
+                                "actions": [
+                                    "no op",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "3.1.2",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom app",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "cef_dictionary": "",
+                                    "cef_name": "file_reputation_from_TruStar",
+                                    "cef_value": "TruStar_Reputation_check:action_result.summary.total_correlated_reports",
+                                    "container_id": "",
+                                    "contains": "",
+                                    "label": "event",
+                                    "name": "User created artifact",
+                                    "run_automation": true,
+                                    "source_data_identifier": "TruStar_Reputation_check:artifact:*.source_data_identifier"
+                                },
+                                "has_app": true,
+                                "id": 24,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom app",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_dictionary",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"test_key\": \"test_value\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_path": "action_result.parameter.cef_value",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.contains",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "domain"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.label",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "event"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact_demo"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.run_automation",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.source_data_identifier",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.existing_artifact_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.failed",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            123
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.success",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.artifact_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            12345
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.server",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact id: 12345, Container id: 1234, Server: https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "cef_dictionary": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF JSON",
+                                        "key": "cef_dictionary",
+                                        "order": 6,
+                                        "required": false
+                                    },
+                                    "cef_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF Name",
+                                        "key": "cef_name",
+                                        "order": 4,
+                                        "required": false,
+                                        "value_list": [
+                                            "",
+                                            "act",
+                                            "app",
+                                            "applicationProtocol",
+                                            "baseEventCount",
+                                            "bytesIn",
+                                            "bytesOut",
+                                            "cat",
+                                            "cn1",
+                                            "cn1Label",
+                                            "cn2",
+                                            "cn2Label",
+                                            "cn3",
+                                            "cn3Label",
+                                            "cnt",
+                                            "cs1",
+                                            "cs1Label",
+                                            "cs2",
+                                            "cs2Label",
+                                            "cs3",
+                                            "cs3Label",
+                                            "cs4",
+                                            "cs4Label",
+                                            "cs5",
+                                            "cs5Label",
+                                            "cs6",
+                                            "cs6Label",
+                                            "destinationAddress",
+                                            "destinationDnsDomain",
+                                            "destinationHostName",
+                                            "destinationMacAddress",
+                                            "destinationNtDomain",
+                                            "destinationPort",
+                                            "destinationProcessName",
+                                            "destinationServiceName",
+                                            "destinationTranslatedAddress",
+                                            "destinationTranslatedPort",
+                                            "destinationUserId",
+                                            "destinationUserName",
+                                            "destinationUserPrivileges",
+                                            "deviceAction",
+                                            "deviceAddress",
+                                            "deviceCustomDate1",
+                                            "deviceCustomDate1Label",
+                                            "deviceCustomDate2",
+                                            "deviceCustomDate2Label",
+                                            "deviceCustomNumber1",
+                                            "deviceCustomNumber1Label",
+                                            "deviceCustomNumber2",
+                                            "deviceCustomNumber2Label",
+                                            "deviceCustomNumber3",
+                                            "deviceCustomNumber3Label",
+                                            "deviceCustomString1",
+                                            "deviceCustomString1Label",
+                                            "deviceCustomString2",
+                                            "deviceCustomString2Label",
+                                            "deviceCustomString3",
+                                            "deviceCustomString3Label",
+                                            "deviceCustomString4",
+                                            "deviceCustomString4Label",
+                                            "deviceCustomString5",
+                                            "deviceCustomString5Label",
+                                            "deviceCustomString6",
+                                            "deviceCustomString6Label",
+                                            "deviceDirection",
+                                            "deviceDnsDomain",
+                                            "deviceEventCategory",
+                                            "deviceExternalId",
+                                            "deviceFacility",
+                                            "deviceHostname",
+                                            "deviceInboundInterface",
+                                            "deviceMacAddress",
+                                            "deviceOutboundInterface",
+                                            "deviceProcessName",
+                                            "deviceTranslatedAddress",
+                                            "dhost",
+                                            "dmac",
+                                            "dntdom",
+                                            "dpriv",
+                                            "dproc",
+                                            "dpt",
+                                            "dst",
+                                            "duid",
+                                            "duser",
+                                            "dvc",
+                                            "dvchost",
+                                            "end",
+                                            "endTime",
+                                            "eventOutcome",
+                                            "externalId",
+                                            "fileCreateTime",
+                                            "fileHash",
+                                            "fileHashMd5",
+                                            "fileHashSha1",
+                                            "fileHashSha256",
+                                            "fileHashSha512",
+                                            "fileId",
+                                            "fileModificationTime",
+                                            "fileName",
+                                            "filePath",
+                                            "filePermission",
+                                            "fileSize",
+                                            "fileType",
+                                            "fname",
+                                            "fsize",
+                                            "in",
+                                            "message",
+                                            "msg",
+                                            "oldfileCreateTime",
+                                            "oldfileHash",
+                                            "oldfileId",
+                                            "oldfileModificationTime",
+                                            "oldfileName",
+                                            "oldfilePath",
+                                            "oldfilePermission",
+                                            "oldfileType",
+                                            "oldfsize",
+                                            "out",
+                                            "outcome",
+                                            "proto",
+                                            "receiptTime",
+                                            "request",
+                                            "requestClientApplication",
+                                            "requestCookies",
+                                            "requestMethod",
+                                            "requestURL",
+                                            "rt",
+                                            "shost",
+                                            "smac",
+                                            "sntdom",
+                                            "sourceAddress",
+                                            "sourceDnsDomain",
+                                            "sourceHostName",
+                                            "sourceMacAddress",
+                                            "sourceNtDomain",
+                                            "sourcePort",
+                                            "sourceServiceName",
+                                            "sourceTranslatedAddress",
+                                            "sourceTranslatedPort",
+                                            "sourceUserId",
+                                            "sourceUserName",
+                                            "sourceUserPrivileges",
+                                            "spriv",
+                                            "spt",
+                                            "src",
+                                            "start",
+                                            "startTime",
+                                            "suid",
+                                            "suser",
+                                            "transportProtocol"
+                                        ]
+                                    },
+                                    "cef_value": {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Value",
+                                        "key": "cef_value",
+                                        "order": 5,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "container_id": {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Numeric container ID for the new artifact",
+                                        "key": "container_id",
+                                        "order": 1,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "contains": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Data type for each CEF field",
+                                        "key": "contains",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "label": {
+                                        "data_type": "string",
+                                        "default": "event",
+                                        "description": "Artifact label (default: event)",
+                                        "key": "label",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "name": {
+                                        "data_type": "string",
+                                        "default": "User created artifact",
+                                        "description": "Name of the new artifact",
+                                        "key": "name",
+                                        "order": 0,
+                                        "required": false
+                                    },
+                                    "run_automation": {
+                                        "data_type": "boolean",
+                                        "default": true,
+                                        "description": "Run automation on newly created artifact(s) (default: true)",
+                                        "key": "run_automation",
+                                        "order": 8,
+                                        "required": false
+                                    },
+                                    "source_data_identifier": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Source Data Idenitifier",
+                                        "key": "source_data_identifier",
+                                        "order": 3,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "24",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "add artifact 1"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def add_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_artifact_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_artifact_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['TruStar_Reputation_check:action_result.summary.total_correlated_reports', 'TruStar_Reputation_check:action_result.parameter.context.artifact_id'], action_results=results)\n    inputs_data_1 = phantom.collect2(container=container, datapath=['TruStar_Reputation_check:artifact:*.source_data_identifier', 'TruStar_Reputation_check:artifact:*.id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'add_artifact_1' call\n    for results_item_1 in results_data_1:\n        for inputs_item_1 in inputs_data_1:\n            if inputs_item_1[0]:\n                parameters.append({\n                    'name': \"User created artifact\",\n                    'label': \"event\",\n                    'cef_name': \"file_reputation_from_TruStar\",\n                    'contains': \"\",\n                    'cef_value': results_item_1[0],\n                    'container_id': \"\",\n                    'cef_dictionary': \"\",\n                    'run_automation': \"true\",\n                    'source_data_identifier': inputs_item_1[0],\n                    # context (artifact id) is added to associate results with the artifact\n                    'context': {'artifact_id': results_item_1[1]},\n                })\n\n    phantom.act(action=\"add artifact\", parameters=parameters, assets=['phantom app'], name=\"add_artifact_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "TruStar Reputation check",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "1cf4692c-b6d7-4c2c-a205-9517ba7524fb",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 93,
+                        "line_start": 60,
+                        "message": "Configuring now",
+                        "name": "add artifact",
+                        "notes": "",
+                        "number": 1,
+                        "order": 4,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 720,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_artifact_1",
+                        "required_params": {
+                            "source_data_identifier": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 138
+                    }
+                ]
+            },
+            "notes": ""
+        },
+        "python_version": "2.7",
+        "schema": 4,
+        "version": "4.9.39220"
+    },
+    "create_time": "2021-04-26T09:32:41.176529+00:00",
+    "draft_mode": false,
+    "labels": [
+        "*"
+    ],
+    "tags": []
+}
