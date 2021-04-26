@@ -63,7 +63,7 @@ def add_artifact_1(action=None, success=None, container=None, results=None, hand
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'add_artifact_1' call
-    results_data_1 = phantom.collect2(container=container, datapath=['hunt_file_1:action_result.summary.total_correlated_reports', 'hunt_file_1:action_result.parameter.context.artifact_id'], action_results=results)
+    results_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_1:action_result.status', 'ip_reputation_1:action_result.data.*.continent', 'ip_reputation_1:action_result.parameter.context.artifact_id'], action_results=results)
     inputs_data_1 = phantom.collect2(container=container, datapath=['hunt_file_1:artifact:*.source_data_identifier', 'hunt_file_1:artifact:*.id'], action_results=results)
 
     parameters = []
@@ -75,15 +75,15 @@ def add_artifact_1(action=None, success=None, container=None, results=None, hand
                 parameters.append({
                     'name': "User created artifact",
                     'label': "event",
-                    'cef_name': "file_reputation_from_TruStar",
+                    'cef_name': results_item_1[0],
                     'contains': "",
-                    'cef_value': results_item_1[0],
+                    'cef_value': results_item_1[1],
                     'container_id': "",
                     'cef_dictionary': "",
                     'run_automation': "true",
                     'source_data_identifier': inputs_item_1[0],
                     # context (artifact id) is added to associate results with the artifact
-                    'context': {'artifact_id': results_item_1[1]},
+                    'context': {'artifact_id': results_item_1[2]},
                 })
 
     phantom.act(action="add artifact", parameters=parameters, assets=['phantom app','phantom_playbook'], name="add_artifact_1", parent_action=action)

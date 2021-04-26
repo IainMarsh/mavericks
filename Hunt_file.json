@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "9f8d632acf2a7657d3736fabff4bc9b9d07d1680",
+            "hash": "5ed4a6220523a3ab8d67dd2a1877de2e0f71f5dd",
             "joint": {
                 "cells": [
                     {
@@ -1477,6 +1477,1058 @@
                         "active": false,
                         "active_keys": {},
                         "active_values": {
+                            "action_name": "hunt_file_1:action_result.summary.total_correlated_reports",
+                            "app": "",
+                            "artifact_id": "artifact:*.source_data_identifier",
+                            "artifact_json": "",
+                            "asset": "",
+                            "cef_dictionary": "",
+                            "cef_json": "",
+                            "cef_name": "ip_reputation_1:action_result.status",
+                            "cef_types_json": "{     \"file_reputation_from_TruStar\": \"TruStar_Reputation_check:action_result.summary.total_correlated_reports\" }",
+                            "cef_value": "ip_reputation_1:action_result.data.*.continent",
+                            "container_id": "",
+                            "contains": "",
+                            "label": "event",
+                            "max_results": 10,
+                            "name": "User created artifact",
+                            "overwrite": "",
+                            "parameters": "hunt_file_1:artifact:*.cef.file_reputation_from_TruStar",
+                            "run_automation": true,
+                            "severity": "",
+                            "source_data_identifier": "hunt_file_1:artifact:*.source_data_identifier",
+                            "tags": "",
+                            "time_limit": ""
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "add artifact",
+                                "actions": [
+                                    "no op",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "3.1.2",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom app",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "cef_dictionary": "",
+                                    "cef_name": "ip_reputation_1:action_result.status",
+                                    "cef_value": "ip_reputation_1:action_result.data.*.continent",
+                                    "container_id": "",
+                                    "contains": "",
+                                    "label": "event",
+                                    "name": "User created artifact",
+                                    "run_automation": true,
+                                    "source_data_identifier": "hunt_file_1:artifact:*.source_data_identifier"
+                                },
+                                "has_app": true,
+                                "id": 24,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom app",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_dictionary",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"test_key\": \"test_value\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_path": "action_result.parameter.cef_value",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.contains",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "domain"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.label",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "event"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact_demo"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.run_automation",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.source_data_identifier",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.existing_artifact_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.failed",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            123
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.success",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.artifact_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            12345
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.server",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact id: 12345, Container id: 1234, Server: https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "cef_dictionary": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF JSON",
+                                        "key": "cef_dictionary",
+                                        "order": 6,
+                                        "required": false
+                                    },
+                                    "cef_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF Name",
+                                        "key": "cef_name",
+                                        "order": 4,
+                                        "required": false,
+                                        "value_list": [
+                                            "",
+                                            "act",
+                                            "app",
+                                            "applicationProtocol",
+                                            "baseEventCount",
+                                            "bytesIn",
+                                            "bytesOut",
+                                            "cat",
+                                            "cn1",
+                                            "cn1Label",
+                                            "cn2",
+                                            "cn2Label",
+                                            "cn3",
+                                            "cn3Label",
+                                            "cnt",
+                                            "cs1",
+                                            "cs1Label",
+                                            "cs2",
+                                            "cs2Label",
+                                            "cs3",
+                                            "cs3Label",
+                                            "cs4",
+                                            "cs4Label",
+                                            "cs5",
+                                            "cs5Label",
+                                            "cs6",
+                                            "cs6Label",
+                                            "destinationAddress",
+                                            "destinationDnsDomain",
+                                            "destinationHostName",
+                                            "destinationMacAddress",
+                                            "destinationNtDomain",
+                                            "destinationPort",
+                                            "destinationProcessName",
+                                            "destinationServiceName",
+                                            "destinationTranslatedAddress",
+                                            "destinationTranslatedPort",
+                                            "destinationUserId",
+                                            "destinationUserName",
+                                            "destinationUserPrivileges",
+                                            "deviceAction",
+                                            "deviceAddress",
+                                            "deviceCustomDate1",
+                                            "deviceCustomDate1Label",
+                                            "deviceCustomDate2",
+                                            "deviceCustomDate2Label",
+                                            "deviceCustomNumber1",
+                                            "deviceCustomNumber1Label",
+                                            "deviceCustomNumber2",
+                                            "deviceCustomNumber2Label",
+                                            "deviceCustomNumber3",
+                                            "deviceCustomNumber3Label",
+                                            "deviceCustomString1",
+                                            "deviceCustomString1Label",
+                                            "deviceCustomString2",
+                                            "deviceCustomString2Label",
+                                            "deviceCustomString3",
+                                            "deviceCustomString3Label",
+                                            "deviceCustomString4",
+                                            "deviceCustomString4Label",
+                                            "deviceCustomString5",
+                                            "deviceCustomString5Label",
+                                            "deviceCustomString6",
+                                            "deviceCustomString6Label",
+                                            "deviceDirection",
+                                            "deviceDnsDomain",
+                                            "deviceEventCategory",
+                                            "deviceExternalId",
+                                            "deviceFacility",
+                                            "deviceHostname",
+                                            "deviceInboundInterface",
+                                            "deviceMacAddress",
+                                            "deviceOutboundInterface",
+                                            "deviceProcessName",
+                                            "deviceTranslatedAddress",
+                                            "dhost",
+                                            "dmac",
+                                            "dntdom",
+                                            "dpriv",
+                                            "dproc",
+                                            "dpt",
+                                            "dst",
+                                            "duid",
+                                            "duser",
+                                            "dvc",
+                                            "dvchost",
+                                            "end",
+                                            "endTime",
+                                            "eventOutcome",
+                                            "externalId",
+                                            "fileCreateTime",
+                                            "fileHash",
+                                            "fileHashMd5",
+                                            "fileHashSha1",
+                                            "fileHashSha256",
+                                            "fileHashSha512",
+                                            "fileId",
+                                            "fileModificationTime",
+                                            "fileName",
+                                            "filePath",
+                                            "filePermission",
+                                            "fileSize",
+                                            "fileType",
+                                            "fname",
+                                            "fsize",
+                                            "in",
+                                            "message",
+                                            "msg",
+                                            "oldfileCreateTime",
+                                            "oldfileHash",
+                                            "oldfileId",
+                                            "oldfileModificationTime",
+                                            "oldfileName",
+                                            "oldfilePath",
+                                            "oldfilePermission",
+                                            "oldfileType",
+                                            "oldfsize",
+                                            "out",
+                                            "outcome",
+                                            "proto",
+                                            "receiptTime",
+                                            "request",
+                                            "requestClientApplication",
+                                            "requestCookies",
+                                            "requestMethod",
+                                            "requestURL",
+                                            "rt",
+                                            "shost",
+                                            "smac",
+                                            "sntdom",
+                                            "sourceAddress",
+                                            "sourceDnsDomain",
+                                            "sourceHostName",
+                                            "sourceMacAddress",
+                                            "sourceNtDomain",
+                                            "sourcePort",
+                                            "sourceServiceName",
+                                            "sourceTranslatedAddress",
+                                            "sourceTranslatedPort",
+                                            "sourceUserId",
+                                            "sourceUserName",
+                                            "sourceUserPrivileges",
+                                            "spriv",
+                                            "spt",
+                                            "src",
+                                            "start",
+                                            "startTime",
+                                            "suid",
+                                            "suser",
+                                            "transportProtocol"
+                                        ]
+                                    },
+                                    "cef_value": {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Value",
+                                        "key": "cef_value",
+                                        "order": 5,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "container_id": {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Numeric container ID for the new artifact",
+                                        "key": "container_id",
+                                        "order": 1,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "contains": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Data type for each CEF field",
+                                        "key": "contains",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "label": {
+                                        "data_type": "string",
+                                        "default": "event",
+                                        "description": "Artifact label (default: event)",
+                                        "key": "label",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "name": {
+                                        "data_type": "string",
+                                        "default": "User created artifact",
+                                        "description": "Name of the new artifact",
+                                        "key": "name",
+                                        "order": 0,
+                                        "required": false
+                                    },
+                                    "run_automation": {
+                                        "data_type": "boolean",
+                                        "default": true,
+                                        "description": "Run automation on newly created artifact(s) (default: true)",
+                                        "key": "run_automation",
+                                        "order": 8,
+                                        "required": false
+                                    },
+                                    "source_data_identifier": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Source Data Idenitifier",
+                                        "key": "source_data_identifier",
+                                        "order": 3,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "24",
+                                "type": "information"
+                            },
+                            {
+                                "action": "add artifact",
+                                "actions": [
+                                    "no op",
+                                    "update list",
+                                    "get action result",
+                                    "create container",
+                                    "import container",
+                                    "export container",
+                                    "deflate item",
+                                    "add artifact",
+                                    "find listitem",
+                                    "add listitem",
+                                    "find artifacts",
+                                    "update artifact tags",
+                                    "add note",
+                                    "update artifact",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "3.0.10",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom_playbook",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "cef_dictionary": "",
+                                    "cef_name": "ip_reputation_1:action_result.status",
+                                    "cef_value": "ip_reputation_1:action_result.data.*.continent",
+                                    "container_id": "",
+                                    "contains": "",
+                                    "label": "event",
+                                    "name": "User created artifact",
+                                    "run_automation": true,
+                                    "source_data_identifier": "hunt_file_1:artifact:*.source_data_identifier"
+                                },
+                                "has_app": true,
+                                "id": 11,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom_playbook",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_dictionary",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "{\"test_key\": \"test_value\"}"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_path": "action_result.parameter.cef_value",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.contains",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "domain"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.label",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "event"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact_demo"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.run_automation",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.source_data_identifier",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.existing_artifact_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.failed",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            123
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.success",
+                                        "data_type": "boolean",
+                                        "example_values": [
+                                            true,
+                                            false
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.artifact_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            12345
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.container_id",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1234
+                                        ]
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.server",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Artifact id: 12345, Container id: 1234, Server: https://10.1.1.10"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "cef_dictionary": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF JSON",
+                                        "key": "cef_dictionary",
+                                        "order": 6,
+                                        "required": false
+                                    },
+                                    "cef_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF Name",
+                                        "key": "cef_name",
+                                        "order": 4,
+                                        "required": false,
+                                        "value_list": [
+                                            "",
+                                            "act",
+                                            "app",
+                                            "applicationProtocol",
+                                            "baseEventCount",
+                                            "bytesIn",
+                                            "bytesOut",
+                                            "cat",
+                                            "cn1",
+                                            "cn1Label",
+                                            "cn2",
+                                            "cn2Label",
+                                            "cn3",
+                                            "cn3Label",
+                                            "cnt",
+                                            "cs1",
+                                            "cs1Label",
+                                            "cs2",
+                                            "cs2Label",
+                                            "cs3",
+                                            "cs3Label",
+                                            "cs4",
+                                            "cs4Label",
+                                            "cs5",
+                                            "cs5Label",
+                                            "cs6",
+                                            "cs6Label",
+                                            "destinationAddress",
+                                            "destinationDnsDomain",
+                                            "destinationHostName",
+                                            "destinationMacAddress",
+                                            "destinationNtDomain",
+                                            "destinationPort",
+                                            "destinationProcessName",
+                                            "destinationServiceName",
+                                            "destinationTranslatedAddress",
+                                            "destinationTranslatedPort",
+                                            "destinationUserId",
+                                            "destinationUserName",
+                                            "destinationUserPrivileges",
+                                            "deviceAction",
+                                            "deviceAddress",
+                                            "deviceCustomDate1",
+                                            "deviceCustomDate1Label",
+                                            "deviceCustomDate2",
+                                            "deviceCustomDate2Label",
+                                            "deviceCustomNumber1",
+                                            "deviceCustomNumber1Label",
+                                            "deviceCustomNumber2",
+                                            "deviceCustomNumber2Label",
+                                            "deviceCustomNumber3",
+                                            "deviceCustomNumber3Label",
+                                            "deviceCustomString1",
+                                            "deviceCustomString1Label",
+                                            "deviceCustomString2",
+                                            "deviceCustomString2Label",
+                                            "deviceCustomString3",
+                                            "deviceCustomString3Label",
+                                            "deviceCustomString4",
+                                            "deviceCustomString4Label",
+                                            "deviceCustomString5",
+                                            "deviceCustomString5Label",
+                                            "deviceCustomString6",
+                                            "deviceCustomString6Label",
+                                            "deviceDirection",
+                                            "deviceDnsDomain",
+                                            "deviceEventCategory",
+                                            "deviceExternalId",
+                                            "deviceFacility",
+                                            "deviceHostname",
+                                            "deviceInboundInterface",
+                                            "deviceMacAddress",
+                                            "deviceOutboundInterface",
+                                            "deviceProcessName",
+                                            "deviceTranslatedAddress",
+                                            "dhost",
+                                            "dmac",
+                                            "dntdom",
+                                            "dpriv",
+                                            "dproc",
+                                            "dpt",
+                                            "dst",
+                                            "duid",
+                                            "duser",
+                                            "dvc",
+                                            "dvchost",
+                                            "end",
+                                            "endTime",
+                                            "eventOutcome",
+                                            "externalId",
+                                            "fileCreateTime",
+                                            "fileHash",
+                                            "fileHashMd5",
+                                            "fileHashSha1",
+                                            "fileHashSha256",
+                                            "fileHashSha512",
+                                            "fileId",
+                                            "fileModificationTime",
+                                            "fileName",
+                                            "filePath",
+                                            "filePermission",
+                                            "fileSize",
+                                            "fileType",
+                                            "fname",
+                                            "fsize",
+                                            "in",
+                                            "message",
+                                            "msg",
+                                            "oldfileCreateTime",
+                                            "oldfileHash",
+                                            "oldfileId",
+                                            "oldfileModificationTime",
+                                            "oldfileName",
+                                            "oldfilePath",
+                                            "oldfilePermission",
+                                            "oldfileType",
+                                            "oldfsize",
+                                            "out",
+                                            "outcome",
+                                            "proto",
+                                            "receiptTime",
+                                            "request",
+                                            "requestClientApplication",
+                                            "requestCookies",
+                                            "requestMethod",
+                                            "requestURL",
+                                            "rt",
+                                            "shost",
+                                            "smac",
+                                            "sntdom",
+                                            "sourceAddress",
+                                            "sourceDnsDomain",
+                                            "sourceHostName",
+                                            "sourceMacAddress",
+                                            "sourceNtDomain",
+                                            "sourcePort",
+                                            "sourceServiceName",
+                                            "sourceTranslatedAddress",
+                                            "sourceTranslatedPort",
+                                            "sourceUserId",
+                                            "sourceUserName",
+                                            "sourceUserPrivileges",
+                                            "spriv",
+                                            "spt",
+                                            "src",
+                                            "start",
+                                            "startTime",
+                                            "suid",
+                                            "suser",
+                                            "transportProtocol"
+                                        ]
+                                    },
+                                    "cef_value": {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Value",
+                                        "key": "cef_value",
+                                        "order": 5,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "container_id": {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Numeric container ID for the new artifact",
+                                        "key": "container_id",
+                                        "order": 1,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "contains": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Data type for each CEF field",
+                                        "key": "contains",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "label": {
+                                        "data_type": "string",
+                                        "default": "event",
+                                        "description": "Artifact label (default: event)",
+                                        "key": "label",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "name": {
+                                        "data_type": "string",
+                                        "default": "User created artifact",
+                                        "description": "Name of the new artifact",
+                                        "key": "name",
+                                        "order": 0,
+                                        "required": false
+                                    },
+                                    "run_automation": {
+                                        "data_type": "boolean",
+                                        "default": true,
+                                        "description": "Run automation on newly created artifact(s) (default: true)",
+                                        "key": "run_automation",
+                                        "order": 8,
+                                        "required": false
+                                    },
+                                    "source_data_identifier": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Source Data Idenitifier",
+                                        "key": "source_data_identifier",
+                                        "order": 3,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "11",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "add artifact 1"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#E6984E"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 1
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def add_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_artifact_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_artifact_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_1:action_result.status', 'ip_reputation_1:action_result.data.*.continent', 'ip_reputation_1:action_result.parameter.context.artifact_id'], action_results=results)\n    inputs_data_1 = phantom.collect2(container=container, datapath=['hunt_file_1:artifact:*.source_data_identifier', 'hunt_file_1:artifact:*.id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'add_artifact_1' call\n    for results_item_1 in results_data_1:\n        for inputs_item_1 in inputs_data_1:\n            if inputs_item_1[0]:\n                parameters.append({\n                    'name': \"User created artifact\",\n                    'label': \"event\",\n                    'cef_name': results_item_1[0],\n                    'contains': \"\",\n                    'cef_value': results_item_1[1],\n                    'container_id': \"\",\n                    'cef_dictionary': \"\",\n                    'run_automation': \"true\",\n                    'source_data_identifier': inputs_item_1[0],\n                    # context (artifact id) is added to associate results with the artifact\n                    'context': {'artifact_id': results_item_1[2]},\n                })\n\n    phantom.act(action=\"add artifact\", parameters=parameters, assets=['phantom app','phantom_playbook'], name=\"add_artifact_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "ip reputation",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "1cf4692c-b6d7-4c2c-a205-9517ba7524fb",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 93,
+                        "line_start": 60,
+                        "message": "Configuring now",
+                        "name": "add artifact",
+                        "notes": "",
+                        "number": 1,
+                        "order": 4,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 720,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "add_artifact_1",
+                        "required_params": {
+                            "source_data_identifier": true
+                        },
+                        "reviewer": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "warn",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 141
+                    },
+                    {
+                        "action": "add artifact",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
                             "cef_dictionary": "",
                             "cef_name": "file_reputation_from_Virustotal",
                             "cef_value": "Virus_Total_reputation_check:action_result.summary.positives",
@@ -2087,1059 +3139,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 140
-                    },
-                    {
-                        "action": "add artifact",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "action_name": "hunt_file_1:action_result.summary.total_correlated_reports",
-                            "app": "",
-                            "artifact_id": "artifact:*.source_data_identifier",
-                            "artifact_json": "",
-                            "asset": "",
-                            "cef_dictionary": "",
-                            "cef_json": "",
-                            "cef_name": "file_reputation_from_TruStar",
-                            "cef_types_json": "{     \"file_reputation_from_TruStar\": \"TruStar_Reputation_check:action_result.summary.total_correlated_reports\" }",
-                            "cef_value": "hunt_file_1:action_result.summary.total_correlated_reports",
-                            "container_id": "",
-                            "contains": "",
-                            "label": "event",
-                            "max_results": 10,
-                            "name": "User created artifact",
-                            "overwrite": "",
-                            "parameters": "hunt_file_1:artifact:*.cef.file_reputation_from_TruStar",
-                            "run_automation": true,
-                            "severity": "",
-                            "source_data_identifier": "hunt_file_1:artifact:*.source_data_identifier",
-                            "tags": "",
-                            "time_limit": ""
-                        },
-                        "angle": 0,
-                        "app": "Phantom",
-                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "add artifact",
-                                "actions": [
-                                    "no op",
-                                    "update list",
-                                    "get action result",
-                                    "create container",
-                                    "import container",
-                                    "export container",
-                                    "deflate item",
-                                    "add artifact",
-                                    "find listitem",
-                                    "add listitem",
-                                    "find artifacts",
-                                    "update artifact tags",
-                                    "add note",
-                                    "update artifact",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "Phantom",
-                                "app_version": "3.1.2",
-                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                                "asset_name": "phantom app",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "cef_dictionary": "",
-                                    "cef_name": "file_reputation_from_TruStar",
-                                    "cef_value": "hunt_file_1:action_result.summary.total_correlated_reports",
-                                    "container_id": "",
-                                    "contains": "",
-                                    "label": "event",
-                                    "name": "User created artifact",
-                                    "run_automation": true,
-                                    "source_data_identifier": "hunt_file_1:artifact:*.source_data_identifier"
-                                },
-                                "has_app": true,
-                                "id": 24,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom app",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.cef_dictionary",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "{\"test_key\": \"test_value\"}"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.cef_name",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "*"
-                                        ],
-                                        "data_path": "action_result.parameter.cef_value",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_path": "action_result.parameter.container_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1234
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.contains",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "domain"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.label",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "event"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.name",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Artifact_demo"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.run_automation",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            true,
-                                            false
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.source_data_identifier",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.existing_artifact_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.failed",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            123
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.success",
-                                        "data_type": "boolean",
-                                        "example_values": [
-                                            true,
-                                            false
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.artifact_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            12345
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.container_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1234
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.summary.server",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "https://10.1.1.10"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Artifact id: 12345, Container id: 1234, Server: https://10.1.1.10"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "cef_dictionary": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "CEF JSON",
-                                        "key": "cef_dictionary",
-                                        "order": 6,
-                                        "required": false
-                                    },
-                                    "cef_name": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "CEF Name",
-                                        "key": "cef_name",
-                                        "order": 4,
-                                        "required": false,
-                                        "value_list": [
-                                            "",
-                                            "act",
-                                            "app",
-                                            "applicationProtocol",
-                                            "baseEventCount",
-                                            "bytesIn",
-                                            "bytesOut",
-                                            "cat",
-                                            "cn1",
-                                            "cn1Label",
-                                            "cn2",
-                                            "cn2Label",
-                                            "cn3",
-                                            "cn3Label",
-                                            "cnt",
-                                            "cs1",
-                                            "cs1Label",
-                                            "cs2",
-                                            "cs2Label",
-                                            "cs3",
-                                            "cs3Label",
-                                            "cs4",
-                                            "cs4Label",
-                                            "cs5",
-                                            "cs5Label",
-                                            "cs6",
-                                            "cs6Label",
-                                            "destinationAddress",
-                                            "destinationDnsDomain",
-                                            "destinationHostName",
-                                            "destinationMacAddress",
-                                            "destinationNtDomain",
-                                            "destinationPort",
-                                            "destinationProcessName",
-                                            "destinationServiceName",
-                                            "destinationTranslatedAddress",
-                                            "destinationTranslatedPort",
-                                            "destinationUserId",
-                                            "destinationUserName",
-                                            "destinationUserPrivileges",
-                                            "deviceAction",
-                                            "deviceAddress",
-                                            "deviceCustomDate1",
-                                            "deviceCustomDate1Label",
-                                            "deviceCustomDate2",
-                                            "deviceCustomDate2Label",
-                                            "deviceCustomNumber1",
-                                            "deviceCustomNumber1Label",
-                                            "deviceCustomNumber2",
-                                            "deviceCustomNumber2Label",
-                                            "deviceCustomNumber3",
-                                            "deviceCustomNumber3Label",
-                                            "deviceCustomString1",
-                                            "deviceCustomString1Label",
-                                            "deviceCustomString2",
-                                            "deviceCustomString2Label",
-                                            "deviceCustomString3",
-                                            "deviceCustomString3Label",
-                                            "deviceCustomString4",
-                                            "deviceCustomString4Label",
-                                            "deviceCustomString5",
-                                            "deviceCustomString5Label",
-                                            "deviceCustomString6",
-                                            "deviceCustomString6Label",
-                                            "deviceDirection",
-                                            "deviceDnsDomain",
-                                            "deviceEventCategory",
-                                            "deviceExternalId",
-                                            "deviceFacility",
-                                            "deviceHostname",
-                                            "deviceInboundInterface",
-                                            "deviceMacAddress",
-                                            "deviceOutboundInterface",
-                                            "deviceProcessName",
-                                            "deviceTranslatedAddress",
-                                            "dhost",
-                                            "dmac",
-                                            "dntdom",
-                                            "dpriv",
-                                            "dproc",
-                                            "dpt",
-                                            "dst",
-                                            "duid",
-                                            "duser",
-                                            "dvc",
-                                            "dvchost",
-                                            "end",
-                                            "endTime",
-                                            "eventOutcome",
-                                            "externalId",
-                                            "fileCreateTime",
-                                            "fileHash",
-                                            "fileHashMd5",
-                                            "fileHashSha1",
-                                            "fileHashSha256",
-                                            "fileHashSha512",
-                                            "fileId",
-                                            "fileModificationTime",
-                                            "fileName",
-                                            "filePath",
-                                            "filePermission",
-                                            "fileSize",
-                                            "fileType",
-                                            "fname",
-                                            "fsize",
-                                            "in",
-                                            "message",
-                                            "msg",
-                                            "oldfileCreateTime",
-                                            "oldfileHash",
-                                            "oldfileId",
-                                            "oldfileModificationTime",
-                                            "oldfileName",
-                                            "oldfilePath",
-                                            "oldfilePermission",
-                                            "oldfileType",
-                                            "oldfsize",
-                                            "out",
-                                            "outcome",
-                                            "proto",
-                                            "receiptTime",
-                                            "request",
-                                            "requestClientApplication",
-                                            "requestCookies",
-                                            "requestMethod",
-                                            "requestURL",
-                                            "rt",
-                                            "shost",
-                                            "smac",
-                                            "sntdom",
-                                            "sourceAddress",
-                                            "sourceDnsDomain",
-                                            "sourceHostName",
-                                            "sourceMacAddress",
-                                            "sourceNtDomain",
-                                            "sourcePort",
-                                            "sourceServiceName",
-                                            "sourceTranslatedAddress",
-                                            "sourceTranslatedPort",
-                                            "sourceUserId",
-                                            "sourceUserName",
-                                            "sourceUserPrivileges",
-                                            "spriv",
-                                            "spt",
-                                            "src",
-                                            "start",
-                                            "startTime",
-                                            "suid",
-                                            "suser",
-                                            "transportProtocol"
-                                        ]
-                                    },
-                                    "cef_value": {
-                                        "contains": [
-                                            "*"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Value",
-                                        "key": "cef_value",
-                                        "order": 5,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "container_id": {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Numeric container ID for the new artifact",
-                                        "key": "container_id",
-                                        "order": 1,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "contains": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Data type for each CEF field",
-                                        "key": "contains",
-                                        "order": 7,
-                                        "required": false
-                                    },
-                                    "label": {
-                                        "data_type": "string",
-                                        "default": "event",
-                                        "description": "Artifact label (default: event)",
-                                        "key": "label",
-                                        "order": 2,
-                                        "required": false
-                                    },
-                                    "name": {
-                                        "data_type": "string",
-                                        "default": "User created artifact",
-                                        "description": "Name of the new artifact",
-                                        "key": "name",
-                                        "order": 0,
-                                        "required": false
-                                    },
-                                    "run_automation": {
-                                        "data_type": "boolean",
-                                        "default": true,
-                                        "description": "Run automation on newly created artifact(s) (default: true)",
-                                        "key": "run_automation",
-                                        "order": 8,
-                                        "required": false
-                                    },
-                                    "source_data_identifier": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Source Data Idenitifier",
-                                        "key": "source_data_identifier",
-                                        "order": 3,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Phantom",
-                                "product_vendor": "Phantom",
-                                "targets": "24",
-                                "type": "information"
-                            },
-                            {
-                                "action": "add artifact",
-                                "actions": [
-                                    "no op",
-                                    "update list",
-                                    "get action result",
-                                    "create container",
-                                    "import container",
-                                    "export container",
-                                    "deflate item",
-                                    "add artifact",
-                                    "find listitem",
-                                    "add listitem",
-                                    "find artifacts",
-                                    "update artifact tags",
-                                    "add note",
-                                    "update artifact",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "Phantom",
-                                "app_version": "3.0.10",
-                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
-                                "asset_name": "phantom_playbook",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "cef_dictionary": "",
-                                    "cef_name": "file_reputation_from_TruStar",
-                                    "cef_value": "hunt_file_1:action_result.summary.total_correlated_reports",
-                                    "container_id": "",
-                                    "contains": "",
-                                    "label": "event",
-                                    "name": "User created artifact",
-                                    "run_automation": true,
-                                    "source_data_identifier": "hunt_file_1:artifact:*.source_data_identifier"
-                                },
-                                "has_app": true,
-                                "id": 11,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "phantom_playbook",
-                                "output": [
-                                    {
-                                        "data_path": "action_result.status",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "success",
-                                            "failed"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.cef_dictionary",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "{\"test_key\": \"test_value\"}"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.cef_name",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "*"
-                                        ],
-                                        "data_path": "action_result.parameter.cef_value",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_path": "action_result.parameter.container_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1234
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.contains",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "domain"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.label",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "event"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.name",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Artifact_demo"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.run_automation",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            true,
-                                            false
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.parameter.source_data_identifier",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.existing_artifact_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.failed",
-                                        "data_type": "boolean"
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            123
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.data.*.success",
-                                        "data_type": "boolean",
-                                        "example_values": [
-                                            true,
-                                            false
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.artifact_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            12345
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.summary.container_id",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1234
-                                        ]
-                                    },
-                                    {
-                                        "contains": [
-                                            "url"
-                                        ],
-                                        "data_path": "action_result.summary.server",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "https://10.1.1.10"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string",
-                                        "example_values": [
-                                            "Artifact id: 12345, Container id: 1234, Server: https://10.1.1.10"
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric",
-                                        "example_values": [
-                                            1
-                                        ]
-                                    }
-                                ],
-                                "parameters": {
-                                    "cef_dictionary": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "CEF JSON",
-                                        "key": "cef_dictionary",
-                                        "order": 6,
-                                        "required": false
-                                    },
-                                    "cef_name": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "CEF Name",
-                                        "key": "cef_name",
-                                        "order": 4,
-                                        "required": false,
-                                        "value_list": [
-                                            "",
-                                            "act",
-                                            "app",
-                                            "applicationProtocol",
-                                            "baseEventCount",
-                                            "bytesIn",
-                                            "bytesOut",
-                                            "cat",
-                                            "cn1",
-                                            "cn1Label",
-                                            "cn2",
-                                            "cn2Label",
-                                            "cn3",
-                                            "cn3Label",
-                                            "cnt",
-                                            "cs1",
-                                            "cs1Label",
-                                            "cs2",
-                                            "cs2Label",
-                                            "cs3",
-                                            "cs3Label",
-                                            "cs4",
-                                            "cs4Label",
-                                            "cs5",
-                                            "cs5Label",
-                                            "cs6",
-                                            "cs6Label",
-                                            "destinationAddress",
-                                            "destinationDnsDomain",
-                                            "destinationHostName",
-                                            "destinationMacAddress",
-                                            "destinationNtDomain",
-                                            "destinationPort",
-                                            "destinationProcessName",
-                                            "destinationServiceName",
-                                            "destinationTranslatedAddress",
-                                            "destinationTranslatedPort",
-                                            "destinationUserId",
-                                            "destinationUserName",
-                                            "destinationUserPrivileges",
-                                            "deviceAction",
-                                            "deviceAddress",
-                                            "deviceCustomDate1",
-                                            "deviceCustomDate1Label",
-                                            "deviceCustomDate2",
-                                            "deviceCustomDate2Label",
-                                            "deviceCustomNumber1",
-                                            "deviceCustomNumber1Label",
-                                            "deviceCustomNumber2",
-                                            "deviceCustomNumber2Label",
-                                            "deviceCustomNumber3",
-                                            "deviceCustomNumber3Label",
-                                            "deviceCustomString1",
-                                            "deviceCustomString1Label",
-                                            "deviceCustomString2",
-                                            "deviceCustomString2Label",
-                                            "deviceCustomString3",
-                                            "deviceCustomString3Label",
-                                            "deviceCustomString4",
-                                            "deviceCustomString4Label",
-                                            "deviceCustomString5",
-                                            "deviceCustomString5Label",
-                                            "deviceCustomString6",
-                                            "deviceCustomString6Label",
-                                            "deviceDirection",
-                                            "deviceDnsDomain",
-                                            "deviceEventCategory",
-                                            "deviceExternalId",
-                                            "deviceFacility",
-                                            "deviceHostname",
-                                            "deviceInboundInterface",
-                                            "deviceMacAddress",
-                                            "deviceOutboundInterface",
-                                            "deviceProcessName",
-                                            "deviceTranslatedAddress",
-                                            "dhost",
-                                            "dmac",
-                                            "dntdom",
-                                            "dpriv",
-                                            "dproc",
-                                            "dpt",
-                                            "dst",
-                                            "duid",
-                                            "duser",
-                                            "dvc",
-                                            "dvchost",
-                                            "end",
-                                            "endTime",
-                                            "eventOutcome",
-                                            "externalId",
-                                            "fileCreateTime",
-                                            "fileHash",
-                                            "fileHashMd5",
-                                            "fileHashSha1",
-                                            "fileHashSha256",
-                                            "fileHashSha512",
-                                            "fileId",
-                                            "fileModificationTime",
-                                            "fileName",
-                                            "filePath",
-                                            "filePermission",
-                                            "fileSize",
-                                            "fileType",
-                                            "fname",
-                                            "fsize",
-                                            "in",
-                                            "message",
-                                            "msg",
-                                            "oldfileCreateTime",
-                                            "oldfileHash",
-                                            "oldfileId",
-                                            "oldfileModificationTime",
-                                            "oldfileName",
-                                            "oldfilePath",
-                                            "oldfilePermission",
-                                            "oldfileType",
-                                            "oldfsize",
-                                            "out",
-                                            "outcome",
-                                            "proto",
-                                            "receiptTime",
-                                            "request",
-                                            "requestClientApplication",
-                                            "requestCookies",
-                                            "requestMethod",
-                                            "requestURL",
-                                            "rt",
-                                            "shost",
-                                            "smac",
-                                            "sntdom",
-                                            "sourceAddress",
-                                            "sourceDnsDomain",
-                                            "sourceHostName",
-                                            "sourceMacAddress",
-                                            "sourceNtDomain",
-                                            "sourcePort",
-                                            "sourceServiceName",
-                                            "sourceTranslatedAddress",
-                                            "sourceTranslatedPort",
-                                            "sourceUserId",
-                                            "sourceUserName",
-                                            "sourceUserPrivileges",
-                                            "spriv",
-                                            "spt",
-                                            "src",
-                                            "start",
-                                            "startTime",
-                                            "suid",
-                                            "suser",
-                                            "transportProtocol"
-                                        ]
-                                    },
-                                    "cef_value": {
-                                        "contains": [
-                                            "*"
-                                        ],
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Value",
-                                        "key": "cef_value",
-                                        "order": 5,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "container_id": {
-                                        "contains": [
-                                            "phantom container id"
-                                        ],
-                                        "data_type": "numeric",
-                                        "default": null,
-                                        "description": "Numeric container ID for the new artifact",
-                                        "key": "container_id",
-                                        "order": 1,
-                                        "primary": true,
-                                        "required": false
-                                    },
-                                    "contains": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Data type for each CEF field",
-                                        "key": "contains",
-                                        "order": 7,
-                                        "required": false
-                                    },
-                                    "label": {
-                                        "data_type": "string",
-                                        "default": "event",
-                                        "description": "Artifact label (default: event)",
-                                        "key": "label",
-                                        "order": 2,
-                                        "required": false
-                                    },
-                                    "name": {
-                                        "data_type": "string",
-                                        "default": "User created artifact",
-                                        "description": "Name of the new artifact",
-                                        "key": "name",
-                                        "order": 0,
-                                        "required": false
-                                    },
-                                    "run_automation": {
-                                        "data_type": "boolean",
-                                        "default": true,
-                                        "description": "Run automation on newly created artifact(s) (default: true)",
-                                        "key": "run_automation",
-                                        "order": 8,
-                                        "required": false
-                                    },
-                                    "source_data_identifier": {
-                                        "data_type": "string",
-                                        "default": null,
-                                        "description": "Source Data Idenitifier",
-                                        "key": "source_data_identifier",
-                                        "order": 3,
-                                        "required": true
-                                    }
-                                },
-                                "product_name": "Phantom",
-                                "product_vendor": "Phantom",
-                                "targets": "11",
-                                "type": "information"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "add artifact 1"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def add_artifact_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('add_artifact_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'add_artifact_1' call\n    results_data_1 = phantom.collect2(container=container, datapath=['hunt_file_1:action_result.summary.total_correlated_reports', 'hunt_file_1:action_result.parameter.context.artifact_id'], action_results=results)\n    inputs_data_1 = phantom.collect2(container=container, datapath=['hunt_file_1:artifact:*.source_data_identifier', 'hunt_file_1:artifact:*.id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'add_artifact_1' call\n    for results_item_1 in results_data_1:\n        for inputs_item_1 in inputs_data_1:\n            if inputs_item_1[0]:\n                parameters.append({\n                    'name': \"User created artifact\",\n                    'label': \"event\",\n                    'cef_name': \"file_reputation_from_TruStar\",\n                    'contains': \"\",\n                    'cef_value': results_item_1[0],\n                    'container_id': \"\",\n                    'cef_dictionary': \"\",\n                    'run_automation': \"true\",\n                    'source_data_identifier': inputs_item_1[0],\n                    # context (artifact id) is added to associate results with the artifact\n                    'context': {'artifact_id': results_item_1[1]},\n                })\n\n    phantom.act(action=\"add artifact\", parameters=parameters, assets=['phantom app','phantom_playbook'], name=\"add_artifact_1\", parent_action=action)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "ip reputation",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "1cf4692c-b6d7-4c2c-a205-9517ba7524fb",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 93,
-                        "line_start": 60,
-                        "message": "Configuring now",
-                        "name": "add artifact",
-                        "notes": "",
-                        "number": 1,
-                        "order": 4,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 720,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "add_artifact_1",
-                        "required_params": {
-                            "source_data_identifier": true
-                        },
-                        "reviewer": "",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "warn",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": "",
-                        "z": 141
+                        "z": 142
                     }
                 ]
             },
@@ -3149,7 +3149,7 @@
         "schema": 4,
         "version": "4.10.1.45070"
     },
-    "create_time": "2021-04-26T14:26:18.202022+00:00",
+    "create_time": "2021-04-26T14:29:04.098410+00:00",
     "draft_mode": false,
     "labels": [
         "*"
