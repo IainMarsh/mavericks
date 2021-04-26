@@ -74,19 +74,19 @@ def add_artifact_1(action=None, success=None, container=None, results=None, hand
             if inputs_item_1[0]:
                 parameters.append({
                     'name': "User created artifact",
-                    'label': "event",
-                    'cef_name': results_item_1[0],
-                    'contains': "",
-                    'cef_value': results_item_1[1],
                     'container_id': "",
-                    'cef_dictionary': "",
-                    'run_automation': "true",
+                    'label': "event",
                     'source_data_identifier': inputs_item_1[0],
+                    'cef_name': results_item_1[0],
+                    'cef_value': results_item_1[1],
+                    'cef_dictionary': "",
+                    'contains': "",
+                    'run_automation': "true",
                     # context (artifact id) is added to associate results with the artifact
-                    'context': {'artifact_id': results_item_1[2]},
+                    'context': {'artifact_id': inputs_item_1[1]},
                 })
 
-    phantom.act(action="add artifact", parameters=parameters, assets=['phantom app','phantom_playbook'], name="add_artifact_1", parent_action=action)
+    phantom.act(action="add artifact", parameters=parameters, assets=['phantom_playbook'], name="add_artifact_1", parent_action=action)
 
     return
 
